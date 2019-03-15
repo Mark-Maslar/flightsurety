@@ -99,11 +99,17 @@ contract FlightSuretyData {
     *
     */   
     function registerAirline
-                            (   
+                            (address originSender,
+                            address airline  
                             )
                             external
-                            pure
+
+                            requireIsOperational
+                            //requireIsCallerAuthorized
+
+                            returns(bool success)
     {
+                            //requireIsCallerAirlineFounded(originSender)
     }
 
 

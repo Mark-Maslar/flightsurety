@@ -41,12 +41,26 @@
       "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [],
+      "constant": false,
+      "inputs": [
+        {
+          "name": "originSender",
+          "type": "address"
+        },
+        {
+          "name": "airline",
+          "type": "address"
+        }
+      ],
       "name": "registerAirline",
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
       "payable": false,
-      "stateMutability": "pure",
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
@@ -86,24 +100,24 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60806040526001600060146101000a81548160ff02191690831515021790555034801561002b57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506102718061007b6000396000f300608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063110466ed1461008d5780631b9265b8146100bc57806336cee484146100d357806363e29a3f146100ea578063a6f2ae3a14610101578063b60d42881461010b578063cd905dff14610115575b61008b610144565b005b34801561009957600080fd5b506100ba600480360381019080803515159060200190929190505050610146565b005b3480156100c857600080fd5b506100d1610227565b005b3480156100df57600080fd5b506100e8610229565b005b3480156100f657600080fd5b506100ff61022b565b005b61010961022d565b005b610113610144565b005b34801561012157600080fd5b5061012a61022f565b604051808215151515815260200191505060405180910390f35b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561020a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b80600060146101000a81548160ff02191690831515021790555050565b565b565b565b565b60008060149054906101000a900460ff169050905600a165627a7a723058207671a14a4dc52ddda5613f736e3f21baa1c0846061d5b5b4172a5bcc64ec614c0029",
-  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063110466ed1461008d5780631b9265b8146100bc57806336cee484146100d357806363e29a3f146100ea578063a6f2ae3a14610101578063b60d42881461010b578063cd905dff14610115575b61008b610144565b005b34801561009957600080fd5b506100ba600480360381019080803515159060200190929190505050610146565b005b3480156100c857600080fd5b506100d1610227565b005b3480156100df57600080fd5b506100e8610229565b005b3480156100f657600080fd5b506100ff61022b565b005b61010961022d565b005b610113610144565b005b34801561012157600080fd5b5061012a61022f565b604051808215151515815260200191505060405180910390f35b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561020a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b80600060146101000a81548160ff02191690831515021790555050565b565b565b565b565b60008060149054906101000a900460ff169050905600a165627a7a723058207671a14a4dc52ddda5613f736e3f21baa1c0846061d5b5b4172a5bcc64ec614c0029",
-  "sourceMap": "107:5845:1:-;;;612:4;585:31;;;;;;;;;;;;;;;;;;;;1122:174;8:9:-1;5:2;;;30:1;27;20:12;5:2;1122:174:1;1278:10;1262:13;;:26;;;;;;;;;;;;;;;;;;107:5845;;;;;;",
-  "deployedSourceMap": "107:5845:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5931:6;:4;:6::i;:::-;107:5845;3275:265;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3275:265:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;4784:160;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4784:160:1;;;;;;4501:187;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4501:187:1;;;;;;3990:175;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3990:175:1;;;;;;4240:194;;;;;;5150:165;;;;;;2914:184;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2914:184:1;;;;;;;;;;;;;;;;;;;;;;;;;;;5150:165;:::o;3275:265::-;2404:13;;;;;;;;;;;2390:27;;:10;:27;;;2382:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3528:4;3514:11;;:18;;;;;;;;;;;;;;;;;;3275:265;:::o;4784:160::-;:::o;4501:187::-;:::o;3990:175::-;:::o;4240:194::-;:::o;2914:184::-;3049:4;3079:11;;;;;;;;;;;3072:18;;2914:184;:::o",
-  "source": "pragma solidity ^0.4.25;\r\n\r\nimport \"../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\";\r\n\r\ncontract FlightSuretyData {\r\n    using SafeMath for uint256;\r\n\r\n    /********************************************************************************************/\r\n    /*                                       DATA VARIABLES                                     */\r\n    /********************************************************************************************/\r\n\r\n    address private contractOwner;                                      // Account used to deploy contract\r\n    bool private operational = true;                                    // Blocks all state changes throughout the contract if false\r\n\r\n    /********************************************************************************************/\r\n    /*                                       EVENT DEFINITIONS                                  */\r\n    /********************************************************************************************/\r\n\r\n\r\n    /**\r\n    * @dev Constructor\r\n    *      The deploying account becomes contractOwner\r\n    */\r\n    constructor\r\n                                (\r\n                                ) \r\n                                public \r\n    {\r\n        contractOwner = msg.sender;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                       FUNCTION MODIFIERS                                 */\r\n    /********************************************************************************************/\r\n\r\n    // Modifiers help avoid duplication of code. They are typically used to validate something\r\n    // before a function is allowed to be executed.\r\n\r\n    /**\r\n    * @dev Modifier that requires the \"operational\" boolean variable to be \"true\"\r\n    *      This is used on all state changing functions to pause the contract in \r\n    *      the event there is an issue that needs to be fixed\r\n    */\r\n    modifier requireIsOperational() \r\n    {\r\n        require(operational, \"Contract is currently not operational\");\r\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\r\n    }\r\n\r\n    /**\r\n    * @dev Modifier that requires the \"ContractOwner\" account to be the function caller\r\n    */\r\n    modifier requireContractOwner()\r\n    {\r\n        require(msg.sender == contractOwner, \"Caller is not contract owner\");\r\n        _;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                       UTILITY FUNCTIONS                                  */\r\n    /********************************************************************************************/\r\n\r\n    /**\r\n    * @dev Get operating status of contract\r\n    *\r\n    * @return A bool that is the current operating status\r\n    */      \r\n    function isOperational() \r\n                            public \r\n                            view \r\n                            returns(bool) \r\n    {\r\n        return operational;\r\n    }\r\n\r\n\r\n    /**\r\n    * @dev Sets contract operations on/off\r\n    *\r\n    * When operational mode is disabled, all write transactions except for this one will fail\r\n    */    \r\n    function setOperatingStatus\r\n                            (\r\n                                bool mode\r\n                            ) \r\n                            external\r\n                            requireContractOwner \r\n    {\r\n        operational = mode;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                     SMART CONTRACT FUNCTIONS                             */\r\n    /********************************************************************************************/\r\n\r\n   /**\r\n    * @dev Add an airline to the registration queue\r\n    *      Can only be called from FlightSuretyApp contract\r\n    *\r\n    */   \r\n    function registerAirline\r\n                            (   \r\n                            )\r\n                            external\r\n                            pure\r\n    {\r\n    }\r\n\r\n\r\n   /**\r\n    * @dev Buy insurance for a flight\r\n    *\r\n    */   \r\n    function buy\r\n                            (                             \r\n                            )\r\n                            external\r\n                            payable\r\n    {\r\n\r\n    }\r\n\r\n    /**\r\n     *  @dev Credits payouts to insurees\r\n    */\r\n    function creditInsurees\r\n                                (\r\n                                )\r\n                                external\r\n                                pure\r\n    {\r\n    }\r\n    \r\n\r\n    /**\r\n     *  @dev Transfers eligible payout funds to insuree\r\n     *\r\n    */\r\n    function pay\r\n                            (\r\n                            )\r\n                            external\r\n                            pure\r\n    {\r\n    }\r\n\r\n   /**\r\n    * @dev Initial funding for the insurance. Unless there are too many delayed flights\r\n    *      resulting in insurance payouts, the contract should be self-sustaining\r\n    *\r\n    */   \r\n    function fund\r\n                            (   \r\n                            )\r\n                            public\r\n                            payable\r\n    {\r\n    }\r\n\r\n    function getFlightKey\r\n                        (\r\n                            address airline,\r\n                            string memory flight,\r\n                            uint256 timestamp\r\n                        )\r\n                        pure\r\n                        internal\r\n                        returns(bytes32) \r\n    {\r\n        return keccak256(abi.encodePacked(airline, flight, timestamp));\r\n    }\r\n\r\n    /**\r\n    * @dev Fallback function for funding smart contract.\r\n    *\r\n    */\r\n    function() \r\n                            external \r\n                            payable \r\n    {\r\n        fund();\r\n    }\r\n\r\n\r\n}\r\n\r\n",
+  "bytecode": "0x60806040526001600060146101000a81548160ff02191690831515021790555034801561002b57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506103848061007b6000396000f300608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063110466ed1461008d5780631b9265b8146100bc57806336cee484146100d3578063a6f2ae3a146100ea578063b60d4288146100f4578063c7ba5018146100fe578063cd905dff14610179575b61008b6101a8565b005b34801561009957600080fd5b506100ba6004803603810190808035151590602001909291905050506101aa565b005b3480156100c857600080fd5b506100d161028b565b005b3480156100df57600080fd5b506100e861028d565b005b6100f261028f565b005b6100fc6101a8565b005b34801561010a57600080fd5b5061015f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610291565b604051808215151515815260200191505060405180910390f35b34801561018557600080fd5b5061018e610342565b604051808215151515815260200191505060405180910390f35b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b80600060146101000a81548160ff02191690831515021790555050565b565b565b565b60008060149054906101000a900460ff16151561033c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b92915050565b60008060149054906101000a900460ff169050905600a165627a7a72305820ec7d71a513a3f0d35c20bc70accf191caa84ffb0f12b0117fc4391de36855e540029",
+  "deployedBytecode": "0x608060405260043610610083576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063110466ed1461008d5780631b9265b8146100bc57806336cee484146100d3578063a6f2ae3a146100ea578063b60d4288146100f4578063c7ba5018146100fe578063cd905dff14610179575b61008b6101a8565b005b34801561009957600080fd5b506100ba6004803603810190808035151590602001909291905050506101aa565b005b3480156100c857600080fd5b506100d161028b565b005b3480156100df57600080fd5b506100e861028d565b005b6100f261028f565b005b6100fc6101a8565b005b34801561010a57600080fd5b5061015f600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610291565b604051808215151515815260200191505060405180910390f35b34801561018557600080fd5b5061018e610342565b604051808215151515815260200191505060405180910390f35b565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561026e576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b80600060146101000a81548160ff02191690831515021790555050565b565b565b565b60008060149054906101000a900460ff16151561033c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b92915050565b60008060149054906101000a900460ff169050905600a165627a7a72305820ec7d71a513a3f0d35c20bc70accf191caa84ffb0f12b0117fc4391de36855e540029",
+  "sourceMap": "107:6113:1:-;;;612:4;585:31;;;;;;;;;;;;;;;;;;;;1122:174;8:9:-1;5:2;;;30:1;27;20:12;5:2;1122:174:1;1278:10;1262:13;;:26;;;;;;;;;;;;;;;;;;107:6113;;;;;;",
+  "deployedSourceMap": "107:6113:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6199:6;:4;:6::i;:::-;107:6113;3275:265;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3275:265:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;5052:160;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5052:160:1;;;;;;4769:187;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4769:187:1;;;;;;4508:194;;;;;;5418:165;;;;;;3990:443;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3990:443:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2914:184;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2914:184:1;;;;;;;;;;;;;;;;;;;;;;;;;;;5418:165;:::o;3275:265::-;2404:13;;;;;;;;;;;2390:27;;:10;:27;;;2382:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3528:4;3514:11;;:18;;;;;;;;;;;;;;;;;;3275:265;:::o;5052:160::-;:::o;4769:187::-;:::o;4508:194::-;:::o;3990:443::-;4331:12;2060:11;;;;;;;;;;;2052:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3990:443;;;;:::o;2914:184::-;3049:4;3079:11;;;;;;;;;;;3072:18;;2914:184;:::o",
+  "source": "pragma solidity ^0.4.25;\r\n\r\nimport \"../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\";\r\n\r\ncontract FlightSuretyData {\r\n    using SafeMath for uint256;\r\n\r\n    /********************************************************************************************/\r\n    /*                                       DATA VARIABLES                                     */\r\n    /********************************************************************************************/\r\n\r\n    address private contractOwner;                                      // Account used to deploy contract\r\n    bool private operational = true;                                    // Blocks all state changes throughout the contract if false\r\n\r\n    /********************************************************************************************/\r\n    /*                                       EVENT DEFINITIONS                                  */\r\n    /********************************************************************************************/\r\n\r\n\r\n    /**\r\n    * @dev Constructor\r\n    *      The deploying account becomes contractOwner\r\n    */\r\n    constructor\r\n                                (\r\n                                ) \r\n                                public \r\n    {\r\n        contractOwner = msg.sender;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                       FUNCTION MODIFIERS                                 */\r\n    /********************************************************************************************/\r\n\r\n    // Modifiers help avoid duplication of code. They are typically used to validate something\r\n    // before a function is allowed to be executed.\r\n\r\n    /**\r\n    * @dev Modifier that requires the \"operational\" boolean variable to be \"true\"\r\n    *      This is used on all state changing functions to pause the contract in \r\n    *      the event there is an issue that needs to be fixed\r\n    */\r\n    modifier requireIsOperational() \r\n    {\r\n        require(operational, \"Contract is currently not operational\");\r\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\r\n    }\r\n\r\n    /**\r\n    * @dev Modifier that requires the \"ContractOwner\" account to be the function caller\r\n    */\r\n    modifier requireContractOwner()\r\n    {\r\n        require(msg.sender == contractOwner, \"Caller is not contract owner\");\r\n        _;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                       UTILITY FUNCTIONS                                  */\r\n    /********************************************************************************************/\r\n\r\n    /**\r\n    * @dev Get operating status of contract\r\n    *\r\n    * @return A bool that is the current operating status\r\n    */      \r\n    function isOperational() \r\n                            public \r\n                            view \r\n                            returns(bool) \r\n    {\r\n        return operational;\r\n    }\r\n\r\n\r\n    /**\r\n    * @dev Sets contract operations on/off\r\n    *\r\n    * When operational mode is disabled, all write transactions except for this one will fail\r\n    */    \r\n    function setOperatingStatus\r\n                            (\r\n                                bool mode\r\n                            ) \r\n                            external\r\n                            requireContractOwner \r\n    {\r\n        operational = mode;\r\n    }\r\n\r\n    /********************************************************************************************/\r\n    /*                                     SMART CONTRACT FUNCTIONS                             */\r\n    /********************************************************************************************/\r\n\r\n   /**\r\n    * @dev Add an airline to the registration queue\r\n    *      Can only be called from FlightSuretyApp contract\r\n    *\r\n    */   \r\n    function registerAirline\r\n                            (address originSender,\r\n                            address airline  \r\n                            )\r\n                            external\r\n\r\n                            requireIsOperational\r\n                            //requireIsCallerAuthorized\r\n\r\n                            returns(bool success)\r\n    {\r\n                            //requireIsCallerAirlineFounded(originSender)\r\n    }\r\n\r\n\r\n   /**\r\n    * @dev Buy insurance for a flight\r\n    *\r\n    */   \r\n    function buy\r\n                            (                             \r\n                            )\r\n                            external\r\n                            payable\r\n    {\r\n\r\n    }\r\n\r\n    /**\r\n     *  @dev Credits payouts to insurees\r\n    */\r\n    function creditInsurees\r\n                                (\r\n                                )\r\n                                external\r\n                                pure\r\n    {\r\n    }\r\n    \r\n\r\n    /**\r\n     *  @dev Transfers eligible payout funds to insuree\r\n     *\r\n    */\r\n    function pay\r\n                            (\r\n                            )\r\n                            external\r\n                            pure\r\n    {\r\n    }\r\n\r\n   /**\r\n    * @dev Initial funding for the insurance. Unless there are too many delayed flights\r\n    *      resulting in insurance payouts, the contract should be self-sustaining\r\n    *\r\n    */   \r\n    function fund\r\n                            (   \r\n                            )\r\n                            public\r\n                            payable\r\n    {\r\n    }\r\n\r\n    function getFlightKey\r\n                        (\r\n                            address airline,\r\n                            string memory flight,\r\n                            uint256 timestamp\r\n                        )\r\n                        pure\r\n                        internal\r\n                        returns(bytes32) \r\n    {\r\n        return keccak256(abi.encodePacked(airline, flight, timestamp));\r\n    }\r\n\r\n    /**\r\n    * @dev Fallback function for funding smart contract.\r\n    *\r\n    */\r\n    function() \r\n                            external \r\n                            payable \r\n    {\r\n        fund();\r\n    }\r\n\r\n\r\n}\r\n\r\n",
   "sourcePath": "C:\\Users\\mmaslar\\Source\\Repos\\GitHub\\flightsurety\\contracts\\FlightSuretyData.sol",
   "ast": {
     "absolutePath": "/C/Users/mmaslar/Source/Repos/GitHub/flightsurety/contracts/FlightSuretyData.sol",
     "exportedSymbols": {
       "FlightSuretyData": [
-        645
+        681
       ]
     },
-    "id": 646,
+    "id": 682,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 537,
+        "id": 565,
         "literals": [
           "solidity",
           "^",
@@ -116,10 +130,10 @@
       {
         "absolutePath": "/C/Users/mmaslar/Source/Repos/GitHub/flightsurety/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 538,
+        "id": 566,
         "nodeType": "ImportDirective",
-        "scope": 646,
-        "sourceUnit": 797,
+        "scope": 682,
+        "sourceUnit": 833,
         "src": "28:75:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -130,31 +144,31 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 645,
+        "id": 681,
         "linearizedBaseContracts": [
-          645
+          681
         ],
         "name": "FlightSuretyData",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 541,
+            "id": 569,
             "libraryName": {
               "contractScope": null,
-              "id": 539,
+              "id": 567,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 796,
+              "referencedDeclaration": 832,
               "src": "146:8:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$796",
+                "typeIdentifier": "t_contract$_SafeMath_$832",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "140:27:1",
             "typeName": {
-              "id": 540,
+              "id": 568,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "159:7:1",
@@ -166,10 +180,10 @@
           },
           {
             "constant": false,
-            "id": 543,
+            "id": 571,
             "name": "contractOwner",
             "nodeType": "VariableDeclaration",
-            "scope": 645,
+            "scope": 681,
             "src": "477:29:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -178,7 +192,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 542,
+              "id": 570,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "477:7:1",
@@ -192,10 +206,10 @@
           },
           {
             "constant": false,
-            "id": 546,
+            "id": 574,
             "name": "operational",
             "nodeType": "VariableDeclaration",
-            "scope": 645,
+            "scope": 681,
             "src": "585:31:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -204,7 +218,7 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 544,
+              "id": 572,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
               "src": "585:4:1",
@@ -216,7 +230,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "74727565",
-              "id": 545,
+              "id": 573,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -235,25 +249,25 @@
           },
           {
             "body": {
-              "id": 554,
+              "id": 582,
               "nodeType": "Block",
               "src": "1251:45:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 552,
+                    "id": 580,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 549,
+                      "id": 577,
                       "name": "contractOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 543,
+                      "referencedDeclaration": 571,
                       "src": "1262:13:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -266,18 +280,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 550,
+                        "id": 578,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 811,
+                        "referencedDeclaration": 847,
                         "src": "1278:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 551,
+                      "id": 579,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -297,14 +311,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 553,
+                  "id": 581,
                   "nodeType": "ExpressionStatement",
                   "src": "1262:26:1"
                 }
               ]
             },
             "documentation": "@dev Constructor\r\n     The deploying account becomes contractOwner\r",
-            "id": 555,
+            "id": 583,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -312,19 +326,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 547,
+              "id": 575,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1167:36:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 548,
+              "id": 576,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1251:0:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "1122:174:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -332,7 +346,7 @@
           },
           {
             "body": {
-              "id": 563,
+              "id": 591,
               "nodeType": "Block",
               "src": "2041:179:1",
               "statements": [
@@ -342,11 +356,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 558,
+                        "id": 586,
                         "name": "operational",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 546,
+                        "referencedDeclaration": 574,
                         "src": "2060:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -356,7 +370,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "436f6e74726163742069732063757272656e746c79206e6f74206f7065726174696f6e616c",
-                        "id": 559,
+                        "id": 587,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -383,21 +397,21 @@
                           "typeString": "literal_string \"Contract is currently not operational\""
                         }
                       ],
-                      "id": 557,
+                      "id": 585,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        814,
-                        815
+                        850,
+                        851
                       ],
-                      "referencedDeclaration": 815,
+                      "referencedDeclaration": 851,
                       "src": "2052:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 560,
+                    "id": 588,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -411,23 +425,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 561,
+                  "id": 589,
                   "nodeType": "ExpressionStatement",
                   "src": "2052:61:1"
                 },
                 {
-                  "id": 562,
+                  "id": 590,
                   "nodeType": "PlaceholderStatement",
                   "src": "2124:1:1"
                 }
               ]
             },
             "documentation": "@dev Modifier that requires the \"operational\" boolean variable to be \"true\"\r\n     This is used on all state changing functions to pause the contract in \r\n     the event there is an issue that needs to be fixed\r",
-            "id": 564,
+            "id": 592,
             "name": "requireIsOperational",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 556,
+              "id": 584,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2032:2:1"
@@ -437,7 +451,7 @@
           },
           {
             "body": {
-              "id": 575,
+              "id": 603,
               "nodeType": "Block",
               "src": "2371:99:1",
               "statements": [
@@ -451,7 +465,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 570,
+                        "id": 598,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -460,18 +474,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 567,
+                            "id": 595,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 811,
+                            "referencedDeclaration": 847,
                             "src": "2390:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 568,
+                          "id": 596,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -489,11 +503,11 @@
                         "operator": "==",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 569,
+                          "id": 597,
                           "name": "contractOwner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 543,
+                          "referencedDeclaration": 571,
                           "src": "2404:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -509,7 +523,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "43616c6c6572206973206e6f7420636f6e7472616374206f776e6572",
-                        "id": 571,
+                        "id": 599,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -536,21 +550,21 @@
                           "typeString": "literal_string \"Caller is not contract owner\""
                         }
                       ],
-                      "id": 566,
+                      "id": 594,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        814,
-                        815
+                        850,
+                        851
                       ],
-                      "referencedDeclaration": 815,
+                      "referencedDeclaration": 851,
                       "src": "2382:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 572,
+                    "id": 600,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -564,23 +578,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 573,
+                  "id": 601,
                   "nodeType": "ExpressionStatement",
                   "src": "2382:68:1"
                 },
                 {
-                  "id": 574,
+                  "id": 602,
                   "nodeType": "PlaceholderStatement",
                   "src": "2461:1:1"
                 }
               ]
             },
             "documentation": "@dev Modifier that requires the \"ContractOwner\" account to be the function caller\r",
-            "id": 576,
+            "id": 604,
             "name": "requireContractOwner",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 565,
+              "id": 593,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2363:2:1"
@@ -590,33 +604,33 @@
           },
           {
             "body": {
-              "id": 583,
+              "id": 611,
               "nodeType": "Block",
               "src": "3061:37:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 581,
+                    "id": 609,
                     "name": "operational",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 546,
+                    "referencedDeclaration": 574,
                     "src": "3079:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 580,
-                  "id": 582,
+                  "functionReturnParameters": 608,
+                  "id": 610,
                   "nodeType": "Return",
                   "src": "3072:18:1"
                 }
               ]
             },
             "documentation": "@dev Get operating status of contract\r\n\n    * @return A bool that is the current operating status\r",
-            "id": 584,
+            "id": 612,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -624,22 +638,22 @@
             "name": "isOperational",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 577,
+              "id": 605,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2936:2:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 580,
+              "id": 608,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 579,
+                  "id": 607,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 584,
+                  "scope": 612,
                   "src": "3049:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -648,7 +662,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 578,
+                    "id": 606,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "3049:4:1",
@@ -663,7 +677,7 @@
               ],
               "src": "3048:6:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "2914:184:1",
             "stateMutability": "view",
             "superFunction": null,
@@ -671,25 +685,25 @@
           },
           {
             "body": {
-              "id": 595,
+              "id": 623,
               "nodeType": "Block",
               "src": "3503:37:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 593,
+                    "id": 621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 591,
+                      "id": 619,
                       "name": "operational",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 546,
+                      "referencedDeclaration": 574,
                       "src": "3514:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -700,11 +714,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 592,
+                      "id": 620,
                       "name": "mode",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 586,
+                      "referencedDeclaration": 614,
                       "src": "3528:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -717,28 +731,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 594,
+                  "id": 622,
                   "nodeType": "ExpressionStatement",
                   "src": "3514:18:1"
                 }
               ]
             },
             "documentation": "@dev Sets contract operations on/off\r\n\n    * When operational mode is disabled, all write transactions except for this one will fail\r",
-            "id": 596,
+            "id": 624,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 589,
+                "id": 617,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 588,
+                  "id": 616,
                   "name": "requireContractOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 576,
+                  "referencedDeclaration": 604,
                   "src": "3476:20:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -752,15 +766,15 @@
             "name": "setOperatingStatus",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 587,
+              "id": 615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 586,
+                  "id": 614,
                   "name": "mode",
                   "nodeType": "VariableDeclaration",
-                  "scope": 596,
+                  "scope": 624,
                   "src": "3367:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -769,7 +783,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 585,
+                    "id": 613,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "3367:4:1",
@@ -786,12 +800,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 590,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3503:0:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "3275:265:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -799,47 +813,147 @@
           },
           {
             "body": {
-              "id": 599,
+              "id": 635,
               "nodeType": "Block",
-              "src": "4157:8:1",
+              "src": "4350:83:1",
               "statements": []
             },
             "documentation": "@dev Add an airline to the registration queue\r\n     Can only be called from FlightSuretyApp contract\r\n\n    ",
-            "id": 600,
+            "id": 636,
             "implemented": true,
             "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 631,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 630,
+                  "name": "requireIsOperational",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 592,
+                  "src": "4214:20:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "4214:20:1"
+              }
+            ],
             "name": "registerAirline",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 597,
+              "id": 629,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4044:35:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 626,
+                  "name": "originSender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4045:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 625,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4045:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 628,
+                  "name": "airline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4096:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 627,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4096:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4044:100:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 598,
+              "id": 634,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4157:0:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 633,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4331:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 632,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4331:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4330:14:1"
             },
-            "scope": 645,
-            "src": "3990:175:1",
-            "stateMutability": "pure",
+            "scope": 681,
+            "src": "3990:443:1",
+            "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 603,
+              "id": 639,
               "nodeType": "Block",
-              "src": "4424:10:1",
+              "src": "4692:10:1",
               "statements": []
             },
             "documentation": "@dev Buy insurance for a flight\r\n\n    ",
-            "id": 604,
+            "id": 640,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -847,33 +961,33 @@
             "name": "buy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 601,
+              "id": 637,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4282:61:1"
+              "src": "4550:61:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 602,
+              "id": 638,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4424:0:1"
+              "src": "4692:0:1"
             },
-            "scope": 645,
-            "src": "4240:194:1",
+            "scope": 681,
+            "src": "4508:194:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 607,
+              "id": 643,
               "nodeType": "Block",
-              "src": "4680:8:1",
+              "src": "4948:8:1",
               "statements": []
             },
             "documentation": " @dev Credits payouts to insurees\r",
-            "id": 608,
+            "id": 644,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -881,33 +995,33 @@
             "name": "creditInsurees",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 605,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4558:36:1"
+              "src": "4826:36:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 606,
+              "id": 642,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4680:0:1"
+              "src": "4948:0:1"
             },
-            "scope": 645,
-            "src": "4501:187:1",
+            "scope": 681,
+            "src": "4769:187:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 611,
+              "id": 647,
               "nodeType": "Block",
-              "src": "4936:8:1",
+              "src": "5204:8:1",
               "statements": []
             },
             "documentation": " @dev Transfers eligible payout funds to insuree\r\n\n    ",
-            "id": 612,
+            "id": 648,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -915,33 +1029,33 @@
             "name": "pay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 609,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4826:32:1"
+              "src": "5094:32:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 610,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4936:0:1"
+              "src": "5204:0:1"
             },
-            "scope": 645,
-            "src": "4784:160:1",
+            "scope": 681,
+            "src": "5052:160:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 615,
+              "id": 651,
               "nodeType": "Block",
-              "src": "5307:8:1",
+              "src": "5575:8:1",
               "statements": []
             },
             "documentation": "@dev Initial funding for the insurance. Unless there are too many delayed flights\r\n     resulting in insurance payouts, the contract should be self-sustaining\r\n\n    ",
-            "id": 616,
+            "id": 652,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -949,29 +1063,29 @@
             "name": "fund",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 613,
+              "id": 649,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5193:35:1"
+              "src": "5461:35:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 614,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5307:0:1"
+              "src": "5575:0:1"
             },
-            "scope": 645,
-            "src": "5150:165:1",
+            "scope": 681,
+            "src": "5418:165:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 636,
+              "id": 672,
               "nodeType": "Block",
-              "src": "5655:81:1",
+              "src": "5923:81:1",
               "statements": [
                 {
                   "expression": {
@@ -982,12 +1096,12 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 630,
+                            "id": 666,
                             "name": "airline",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 618,
-                            "src": "5700:7:1",
+                            "referencedDeclaration": 654,
+                            "src": "5968:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -995,12 +1109,12 @@
                           },
                           {
                             "argumentTypes": null,
-                            "id": 631,
+                            "id": 667,
                             "name": "flight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 620,
-                            "src": "5709:6:1",
+                            "referencedDeclaration": 656,
+                            "src": "5977:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -1008,12 +1122,12 @@
                           },
                           {
                             "argumentTypes": null,
-                            "id": 632,
+                            "id": 668,
                             "name": "timestamp",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 622,
-                            "src": "5717:9:1",
+                            "referencedDeclaration": 658,
+                            "src": "5985:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -1037,18 +1151,18 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 628,
+                            "id": 664,
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 798,
-                            "src": "5683:3:1",
+                            "referencedDeclaration": 834,
+                            "src": "5951:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
                               "typeString": "abi"
                             }
                           },
-                          "id": 629,
+                          "id": 665,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -1056,13 +1170,13 @@
                           "memberName": "encodePacked",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "5683:16:1",
+                          "src": "5951:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                             "typeString": "function () pure returns (bytes memory)"
                           }
                         },
-                        "id": 633,
+                        "id": 669,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1070,7 +1184,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5683:44:1",
+                        "src": "5951:44:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -1084,18 +1198,18 @@
                           "typeString": "bytes memory"
                         }
                       ],
-                      "id": 627,
+                      "id": 663,
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 805,
-                      "src": "5673:9:1",
+                      "referencedDeclaration": 841,
+                      "src": "5941:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
                         "typeString": "function () pure returns (bytes32)"
                       }
                     },
-                    "id": 634,
+                    "id": 670,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1103,21 +1217,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5673:55:1",
+                    "src": "5941:55:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
-                  "functionReturnParameters": 626,
-                  "id": 635,
+                  "functionReturnParameters": 662,
+                  "id": 671,
                   "nodeType": "Return",
-                  "src": "5666:62:1"
+                  "src": "5934:62:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 637,
+            "id": 673,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1125,16 +1239,16 @@
             "name": "getFlightKey",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 623,
+              "id": 659,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 618,
+                  "id": 654,
                   "name": "airline",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5401:15:1",
+                  "scope": 673,
+                  "src": "5669:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1142,10 +1256,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 617,
+                    "id": 653,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5401:7:1",
+                    "src": "5669:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1156,11 +1270,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 620,
+                  "id": 656,
                   "name": "flight",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5447:20:1",
+                  "scope": 673,
+                  "src": "5715:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1168,10 +1282,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 619,
+                    "id": 655,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5447:6:1",
+                    "src": "5715:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1182,11 +1296,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 622,
+                  "id": 658,
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5498:17:1",
+                  "scope": 673,
+                  "src": "5766:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1194,10 +1308,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 621,
+                    "id": 657,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5498:7:1",
+                    "src": "5766:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1207,20 +1321,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5370:172:1"
+              "src": "5638:172:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 626,
+              "id": 662,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 625,
+                  "id": 661,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5640:7:1",
+                  "scope": 673,
+                  "src": "5908:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1228,10 +1342,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 624,
+                    "id": 660,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5640:7:1",
+                    "src": "5908:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1241,19 +1355,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5639:9:1"
+              "src": "5907:9:1"
             },
-            "scope": 645,
-            "src": "5323:413:1",
+            "scope": 681,
+            "src": "5591:413:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 643,
+              "id": 679,
               "nodeType": "Block",
-              "src": "5920:25:1",
+              "src": "6188:25:1",
               "statements": [
                 {
                   "expression": {
@@ -1261,18 +1375,18 @@
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 640,
+                      "id": 676,
                       "name": "fund",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 616,
-                      "src": "5931:4:1",
+                      "referencedDeclaration": 652,
+                      "src": "6199:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                         "typeString": "function ()"
                       }
                     },
-                    "id": 641,
+                    "id": 677,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1280,20 +1394,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5931:6:1",
+                    "src": "6199:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 642,
+                  "id": 678,
                   "nodeType": "ExpressionStatement",
-                  "src": "5931:6:1"
+                  "src": "6199:6:1"
                 }
               ]
             },
             "documentation": "@dev Fallback function for funding smart contract.\r\n\n    ",
-            "id": 644,
+            "id": 680,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1301,43 +1415,43 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 638,
+              "id": 674,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5834:2:1"
+              "src": "6102:2:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 639,
+              "id": 675,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5920:0:1"
+              "src": "6188:0:1"
             },
-            "scope": 645,
-            "src": "5826:119:1",
+            "scope": 681,
+            "src": "6094:119:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 646,
-        "src": "107:5845:1"
+        "scope": 682,
+        "src": "107:6113:1"
       }
     ],
-    "src": "0:5956:1"
+    "src": "0:6224:1"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/mmaslar/Source/Repos/GitHub/flightsurety/contracts/FlightSuretyData.sol",
     "exportedSymbols": {
       "FlightSuretyData": [
-        645
+        681
       ]
     },
-    "id": 646,
+    "id": 682,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 537,
+        "id": 565,
         "literals": [
           "solidity",
           "^",
@@ -1350,10 +1464,10 @@
       {
         "absolutePath": "/C/Users/mmaslar/Source/Repos/GitHub/flightsurety/node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
         "file": "../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol",
-        "id": 538,
+        "id": 566,
         "nodeType": "ImportDirective",
-        "scope": 646,
-        "sourceUnit": 797,
+        "scope": 682,
+        "sourceUnit": 833,
         "src": "28:75:1",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1364,31 +1478,31 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 645,
+        "id": 681,
         "linearizedBaseContracts": [
-          645
+          681
         ],
         "name": "FlightSuretyData",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
-            "id": 541,
+            "id": 569,
             "libraryName": {
               "contractScope": null,
-              "id": 539,
+              "id": 567,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 796,
+              "referencedDeclaration": 832,
               "src": "146:8:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$796",
+                "typeIdentifier": "t_contract$_SafeMath_$832",
                 "typeString": "library SafeMath"
               }
             },
             "nodeType": "UsingForDirective",
             "src": "140:27:1",
             "typeName": {
-              "id": 540,
+              "id": 568,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "159:7:1",
@@ -1400,10 +1514,10 @@
           },
           {
             "constant": false,
-            "id": 543,
+            "id": 571,
             "name": "contractOwner",
             "nodeType": "VariableDeclaration",
-            "scope": 645,
+            "scope": 681,
             "src": "477:29:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1412,7 +1526,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 542,
+              "id": 570,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "477:7:1",
@@ -1426,10 +1540,10 @@
           },
           {
             "constant": false,
-            "id": 546,
+            "id": 574,
             "name": "operational",
             "nodeType": "VariableDeclaration",
-            "scope": 645,
+            "scope": 681,
             "src": "585:31:1",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1438,7 +1552,7 @@
               "typeString": "bool"
             },
             "typeName": {
-              "id": 544,
+              "id": 572,
               "name": "bool",
               "nodeType": "ElementaryTypeName",
               "src": "585:4:1",
@@ -1450,7 +1564,7 @@
             "value": {
               "argumentTypes": null,
               "hexValue": "74727565",
-              "id": 545,
+              "id": 573,
               "isConstant": false,
               "isLValue": false,
               "isPure": true,
@@ -1469,25 +1583,25 @@
           },
           {
             "body": {
-              "id": 554,
+              "id": 582,
               "nodeType": "Block",
               "src": "1251:45:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 552,
+                    "id": 580,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 549,
+                      "id": 577,
                       "name": "contractOwner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 543,
+                      "referencedDeclaration": 571,
                       "src": "1262:13:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1500,18 +1614,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 550,
+                        "id": 578,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 811,
+                        "referencedDeclaration": 847,
                         "src": "1278:3:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 551,
+                      "id": 579,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -1531,14 +1645,14 @@
                       "typeString": "address"
                     }
                   },
-                  "id": 553,
+                  "id": 581,
                   "nodeType": "ExpressionStatement",
                   "src": "1262:26:1"
                 }
               ]
             },
             "documentation": "@dev Constructor\r\n     The deploying account becomes contractOwner\r",
-            "id": 555,
+            "id": 583,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -1546,19 +1660,19 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 547,
+              "id": 575,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1167:36:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 548,
+              "id": 576,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1251:0:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "1122:174:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1566,7 +1680,7 @@
           },
           {
             "body": {
-              "id": 563,
+              "id": 591,
               "nodeType": "Block",
               "src": "2041:179:1",
               "statements": [
@@ -1576,11 +1690,11 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 558,
+                        "id": 586,
                         "name": "operational",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 546,
+                        "referencedDeclaration": 574,
                         "src": "2060:11:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
@@ -1590,7 +1704,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "436f6e74726163742069732063757272656e746c79206e6f74206f7065726174696f6e616c",
-                        "id": 559,
+                        "id": 587,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1617,21 +1731,21 @@
                           "typeString": "literal_string \"Contract is currently not operational\""
                         }
                       ],
-                      "id": 557,
+                      "id": 585,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        814,
-                        815
+                        850,
+                        851
                       ],
-                      "referencedDeclaration": 815,
+                      "referencedDeclaration": 851,
                       "src": "2052:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 560,
+                    "id": 588,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1645,23 +1759,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 561,
+                  "id": 589,
                   "nodeType": "ExpressionStatement",
                   "src": "2052:61:1"
                 },
                 {
-                  "id": 562,
+                  "id": 590,
                   "nodeType": "PlaceholderStatement",
                   "src": "2124:1:1"
                 }
               ]
             },
             "documentation": "@dev Modifier that requires the \"operational\" boolean variable to be \"true\"\r\n     This is used on all state changing functions to pause the contract in \r\n     the event there is an issue that needs to be fixed\r",
-            "id": 564,
+            "id": 592,
             "name": "requireIsOperational",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 556,
+              "id": 584,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2032:2:1"
@@ -1671,7 +1785,7 @@
           },
           {
             "body": {
-              "id": 575,
+              "id": 603,
               "nodeType": "Block",
               "src": "2371:99:1",
               "statements": [
@@ -1685,7 +1799,7 @@
                           "typeIdentifier": "t_address",
                           "typeString": "address"
                         },
-                        "id": 570,
+                        "id": 598,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1694,18 +1808,18 @@
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
-                            "id": 567,
+                            "id": 595,
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 811,
+                            "referencedDeclaration": 847,
                             "src": "2390:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
                             }
                           },
-                          "id": 568,
+                          "id": 596,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1723,11 +1837,11 @@
                         "operator": "==",
                         "rightExpression": {
                           "argumentTypes": null,
-                          "id": 569,
+                          "id": 597,
                           "name": "contractOwner",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 543,
+                          "referencedDeclaration": 571,
                           "src": "2404:13:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -1743,7 +1857,7 @@
                       {
                         "argumentTypes": null,
                         "hexValue": "43616c6c6572206973206e6f7420636f6e7472616374206f776e6572",
-                        "id": 571,
+                        "id": 599,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -1770,21 +1884,21 @@
                           "typeString": "literal_string \"Caller is not contract owner\""
                         }
                       ],
-                      "id": 566,
+                      "id": 594,
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        814,
-                        815
+                        850,
+                        851
                       ],
-                      "referencedDeclaration": 815,
+                      "referencedDeclaration": 851,
                       "src": "2382:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
                       }
                     },
-                    "id": 572,
+                    "id": 600,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1798,23 +1912,23 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 573,
+                  "id": 601,
                   "nodeType": "ExpressionStatement",
                   "src": "2382:68:1"
                 },
                 {
-                  "id": 574,
+                  "id": 602,
                   "nodeType": "PlaceholderStatement",
                   "src": "2461:1:1"
                 }
               ]
             },
             "documentation": "@dev Modifier that requires the \"ContractOwner\" account to be the function caller\r",
-            "id": 576,
+            "id": 604,
             "name": "requireContractOwner",
             "nodeType": "ModifierDefinition",
             "parameters": {
-              "id": 565,
+              "id": 593,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2363:2:1"
@@ -1824,33 +1938,33 @@
           },
           {
             "body": {
-              "id": 583,
+              "id": 611,
               "nodeType": "Block",
               "src": "3061:37:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 581,
+                    "id": 609,
                     "name": "operational",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 546,
+                    "referencedDeclaration": 574,
                     "src": "3079:11:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
-                  "functionReturnParameters": 580,
-                  "id": 582,
+                  "functionReturnParameters": 608,
+                  "id": 610,
                   "nodeType": "Return",
                   "src": "3072:18:1"
                 }
               ]
             },
             "documentation": "@dev Get operating status of contract\r\n\n    * @return A bool that is the current operating status\r",
-            "id": 584,
+            "id": 612,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1858,22 +1972,22 @@
             "name": "isOperational",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 577,
+              "id": 605,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2936:2:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 580,
+              "id": 608,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 579,
+                  "id": 607,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 584,
+                  "scope": 612,
                   "src": "3049:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1882,7 +1996,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 578,
+                    "id": 606,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "3049:4:1",
@@ -1897,7 +2011,7 @@
               ],
               "src": "3048:6:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "2914:184:1",
             "stateMutability": "view",
             "superFunction": null,
@@ -1905,25 +2019,25 @@
           },
           {
             "body": {
-              "id": 595,
+              "id": 623,
               "nodeType": "Block",
               "src": "3503:37:1",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 593,
+                    "id": 621,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 591,
+                      "id": 619,
                       "name": "operational",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 546,
+                      "referencedDeclaration": 574,
                       "src": "3514:11:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1934,11 +2048,11 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 592,
+                      "id": 620,
                       "name": "mode",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 586,
+                      "referencedDeclaration": 614,
                       "src": "3528:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
@@ -1951,28 +2065,28 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 594,
+                  "id": 622,
                   "nodeType": "ExpressionStatement",
                   "src": "3514:18:1"
                 }
               ]
             },
             "documentation": "@dev Sets contract operations on/off\r\n\n    * When operational mode is disabled, all write transactions except for this one will fail\r",
-            "id": 596,
+            "id": 624,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
             "modifiers": [
               {
                 "arguments": null,
-                "id": 589,
+                "id": 617,
                 "modifierName": {
                   "argumentTypes": null,
-                  "id": 588,
+                  "id": 616,
                   "name": "requireContractOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 576,
+                  "referencedDeclaration": 604,
                   "src": "3476:20:1",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1986,15 +2100,15 @@
             "name": "setOperatingStatus",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 587,
+              "id": 615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 586,
+                  "id": 614,
                   "name": "mode",
                   "nodeType": "VariableDeclaration",
-                  "scope": 596,
+                  "scope": 624,
                   "src": "3367:9:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2003,7 +2117,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 585,
+                    "id": 613,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "3367:4:1",
@@ -2020,12 +2134,12 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 590,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "3503:0:1"
             },
-            "scope": 645,
+            "scope": 681,
             "src": "3275:265:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2033,47 +2147,147 @@
           },
           {
             "body": {
-              "id": 599,
+              "id": 635,
               "nodeType": "Block",
-              "src": "4157:8:1",
+              "src": "4350:83:1",
               "statements": []
             },
             "documentation": "@dev Add an airline to the registration queue\r\n     Can only be called from FlightSuretyApp contract\r\n\n    ",
-            "id": 600,
+            "id": 636,
             "implemented": true,
             "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 631,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 630,
+                  "name": "requireIsOperational",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 592,
+                  "src": "4214:20:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "4214:20:1"
+              }
+            ],
             "name": "registerAirline",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 597,
+              "id": 629,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4044:35:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 626,
+                  "name": "originSender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4045:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 625,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4045:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 628,
+                  "name": "airline",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4096:15:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 627,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4096:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4044:100:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 598,
+              "id": 634,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "4157:0:1"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 633,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 636,
+                  "src": "4331:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 632,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4331:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4330:14:1"
             },
-            "scope": 645,
-            "src": "3990:175:1",
-            "stateMutability": "pure",
+            "scope": 681,
+            "src": "3990:443:1",
+            "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 603,
+              "id": 639,
               "nodeType": "Block",
-              "src": "4424:10:1",
+              "src": "4692:10:1",
               "statements": []
             },
             "documentation": "@dev Buy insurance for a flight\r\n\n    ",
-            "id": 604,
+            "id": 640,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2081,33 +2295,33 @@
             "name": "buy",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 601,
+              "id": 637,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4282:61:1"
+              "src": "4550:61:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 602,
+              "id": 638,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4424:0:1"
+              "src": "4692:0:1"
             },
-            "scope": 645,
-            "src": "4240:194:1",
+            "scope": 681,
+            "src": "4508:194:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 607,
+              "id": 643,
               "nodeType": "Block",
-              "src": "4680:8:1",
+              "src": "4948:8:1",
               "statements": []
             },
             "documentation": " @dev Credits payouts to insurees\r",
-            "id": 608,
+            "id": 644,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2115,33 +2329,33 @@
             "name": "creditInsurees",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 605,
+              "id": 641,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4558:36:1"
+              "src": "4826:36:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 606,
+              "id": 642,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4680:0:1"
+              "src": "4948:0:1"
             },
-            "scope": 645,
-            "src": "4501:187:1",
+            "scope": 681,
+            "src": "4769:187:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 611,
+              "id": 647,
               "nodeType": "Block",
-              "src": "4936:8:1",
+              "src": "5204:8:1",
               "statements": []
             },
             "documentation": " @dev Transfers eligible payout funds to insuree\r\n\n    ",
-            "id": 612,
+            "id": 648,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2149,33 +2363,33 @@
             "name": "pay",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 609,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4826:32:1"
+              "src": "5094:32:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 610,
+              "id": 646,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4936:0:1"
+              "src": "5204:0:1"
             },
-            "scope": 645,
-            "src": "4784:160:1",
+            "scope": 681,
+            "src": "5052:160:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 615,
+              "id": 651,
               "nodeType": "Block",
-              "src": "5307:8:1",
+              "src": "5575:8:1",
               "statements": []
             },
             "documentation": "@dev Initial funding for the insurance. Unless there are too many delayed flights\r\n     resulting in insurance payouts, the contract should be self-sustaining\r\n\n    ",
-            "id": 616,
+            "id": 652,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2183,29 +2397,29 @@
             "name": "fund",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 613,
+              "id": 649,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5193:35:1"
+              "src": "5461:35:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 614,
+              "id": 650,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5307:0:1"
+              "src": "5575:0:1"
             },
-            "scope": 645,
-            "src": "5150:165:1",
+            "scope": 681,
+            "src": "5418:165:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 636,
+              "id": 672,
               "nodeType": "Block",
-              "src": "5655:81:1",
+              "src": "5923:81:1",
               "statements": [
                 {
                   "expression": {
@@ -2216,12 +2430,12 @@
                         "arguments": [
                           {
                             "argumentTypes": null,
-                            "id": 630,
+                            "id": 666,
                             "name": "airline",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 618,
-                            "src": "5700:7:1",
+                            "referencedDeclaration": 654,
+                            "src": "5968:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2229,12 +2443,12 @@
                           },
                           {
                             "argumentTypes": null,
-                            "id": 631,
+                            "id": 667,
                             "name": "flight",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 620,
-                            "src": "5709:6:1",
+                            "referencedDeclaration": 656,
+                            "src": "5977:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -2242,12 +2456,12 @@
                           },
                           {
                             "argumentTypes": null,
-                            "id": 632,
+                            "id": 668,
                             "name": "timestamp",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 622,
-                            "src": "5717:9:1",
+                            "referencedDeclaration": 658,
+                            "src": "5985:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2271,18 +2485,18 @@
                           ],
                           "expression": {
                             "argumentTypes": null,
-                            "id": 628,
+                            "id": 664,
                             "name": "abi",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 798,
-                            "src": "5683:3:1",
+                            "referencedDeclaration": 834,
+                            "src": "5951:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
                               "typeString": "abi"
                             }
                           },
-                          "id": 629,
+                          "id": 665,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": true,
@@ -2290,13 +2504,13 @@
                           "memberName": "encodePacked",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "5683:16:1",
+                          "src": "5951:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                             "typeString": "function () pure returns (bytes memory)"
                           }
                         },
-                        "id": 633,
+                        "id": 669,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2304,7 +2518,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "5683:44:1",
+                        "src": "5951:44:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -2318,18 +2532,18 @@
                           "typeString": "bytes memory"
                         }
                       ],
-                      "id": 627,
+                      "id": 663,
                       "name": "keccak256",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 805,
-                      "src": "5673:9:1",
+                      "referencedDeclaration": 841,
+                      "src": "5941:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
                         "typeString": "function () pure returns (bytes32)"
                       }
                     },
-                    "id": 634,
+                    "id": 670,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2337,21 +2551,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5673:55:1",
+                    "src": "5941:55:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
                     }
                   },
-                  "functionReturnParameters": 626,
-                  "id": 635,
+                  "functionReturnParameters": 662,
+                  "id": 671,
                   "nodeType": "Return",
-                  "src": "5666:62:1"
+                  "src": "5934:62:1"
                 }
               ]
             },
             "documentation": null,
-            "id": 637,
+            "id": 673,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2359,16 +2573,16 @@
             "name": "getFlightKey",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 623,
+              "id": 659,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 618,
+                  "id": 654,
                   "name": "airline",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5401:15:1",
+                  "scope": 673,
+                  "src": "5669:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2376,10 +2590,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 617,
+                    "id": 653,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5401:7:1",
+                    "src": "5669:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2390,11 +2604,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 620,
+                  "id": 656,
                   "name": "flight",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5447:20:1",
+                  "scope": 673,
+                  "src": "5715:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2402,10 +2616,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 619,
+                    "id": 655,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5447:6:1",
+                    "src": "5715:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2416,11 +2630,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 622,
+                  "id": 658,
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5498:17:1",
+                  "scope": 673,
+                  "src": "5766:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2428,10 +2642,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 621,
+                    "id": 657,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5498:7:1",
+                    "src": "5766:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2441,20 +2655,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5370:172:1"
+              "src": "5638:172:1"
             },
             "payable": false,
             "returnParameters": {
-              "id": 626,
+              "id": 662,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 625,
+                  "id": 661,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
-                  "src": "5640:7:1",
+                  "scope": 673,
+                  "src": "5908:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2462,10 +2676,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 624,
+                    "id": 660,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "5640:7:1",
+                    "src": "5908:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2475,19 +2689,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "5639:9:1"
+              "src": "5907:9:1"
             },
-            "scope": 645,
-            "src": "5323:413:1",
+            "scope": 681,
+            "src": "5591:413:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           },
           {
             "body": {
-              "id": 643,
+              "id": 679,
               "nodeType": "Block",
-              "src": "5920:25:1",
+              "src": "6188:25:1",
               "statements": [
                 {
                   "expression": {
@@ -2495,18 +2709,18 @@
                     "arguments": [],
                     "expression": {
                       "argumentTypes": [],
-                      "id": 640,
+                      "id": 676,
                       "name": "fund",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 616,
-                      "src": "5931:4:1",
+                      "referencedDeclaration": 652,
+                      "src": "6199:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                         "typeString": "function ()"
                       }
                     },
-                    "id": 641,
+                    "id": 677,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2514,20 +2728,20 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "5931:6:1",
+                    "src": "6199:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 642,
+                  "id": 678,
                   "nodeType": "ExpressionStatement",
-                  "src": "5931:6:1"
+                  "src": "6199:6:1"
                 }
               ]
             },
             "documentation": "@dev Fallback function for funding smart contract.\r\n\n    ",
-            "id": 644,
+            "id": 680,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2535,30 +2749,30 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 638,
+              "id": 674,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5834:2:1"
+              "src": "6102:2:1"
             },
             "payable": true,
             "returnParameters": {
-              "id": 639,
+              "id": 675,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "5920:0:1"
+              "src": "6188:0:1"
             },
-            "scope": 645,
-            "src": "5826:119:1",
+            "scope": 681,
+            "src": "6094:119:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 646,
-        "src": "107:5845:1"
+        "scope": 682,
+        "src": "107:6113:1"
       }
     ],
-    "src": "0:5956:1"
+    "src": "0:6224:1"
   },
   "compiler": {
     "name": "solc",
@@ -2570,8 +2784,20 @@
       "links": {},
       "address": "0x1f08f05af9b985908f9ee2f0cf966527824ca8e3",
       "transactionHash": "0xd9bf620912c41bd3b4cdabe9c8ff8dc80e2038a2597ba8222fbb409ad0bc1c00"
+    },
+    "1552585807362": {
+      "events": {},
+      "links": {},
+      "address": "0x1f08f05af9b985908f9ee2f0cf966527824ca8e3",
+      "transactionHash": "0xd9bf620912c41bd3b4cdabe9c8ff8dc80e2038a2597ba8222fbb409ad0bc1c00"
+    },
+    "1552674661527": {
+      "events": {},
+      "links": {},
+      "address": "0x23330ef92b2fc1d9a48ebb246f868142c5188740",
+      "transactionHash": "0xd478c5f84f4073e0c457b6975d5a23b53ffbe769e56cfc40b0673c23c6d4ba98"
     }
   },
   "schemaVersion": "2.0.2",
-  "updatedAt": "2019-03-08T18:35:23.783Z"
+  "updatedAt": "2019-03-15T20:39:02.265Z"
 }
