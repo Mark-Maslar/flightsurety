@@ -79,7 +79,10 @@ contract FlightSuretyApp {
                                 public 
     {
         contractOwner = msg.sender;
+        //First airline is registered when contract is deployed.
         flightSuretyData = FlightSuretyData(dataContract);
+        flightSuretyData.registerAirline(contractOwner, contractOwner); ///TODO replace w/ wallet address x??? Presume it to be an airline.
+        
     }
 
     /********************************************************************************************/
@@ -101,7 +104,7 @@ contract FlightSuretyApp {
   
    /**
     * @dev Add an airline to the registration queue
-    *
+    * TODO Only existing airline may register a new airline until there are at least four airlines registered
     */   
     function registerAirline
                             ( 
@@ -155,7 +158,7 @@ contract FlightSuretyApp {
                         )
                         external
     {
-        uint8 index = getRandomIndex(msg.sender);
+        uint8 index = getPseudoRandomIndex(msg.sender);
 
         // Generate a unique key for storing the request
         bytes32 key = keccak256(abi.encodePacked(index, airline, flight, timestamp));
@@ -283,7 +286,7 @@ contract FlightSuretyApp {
     function getFlightKey
                         (
                             address airline,
-                            string flight,
+                            string memory flight,
                             uint256 timestamp
                         )
                         pure
@@ -298,27 +301,27 @@ contract FlightSuretyApp {
                             (                       
                                 address account         
                             )
-                            internal
+                            internal 
                             returns(uint8[3])
     {
         uint8[3] memory indexes;
-        indexes[0] = getRandomIndex(account);
+        indexes[0] = getPseudoRandomIndex(account);
         
         indexes[1] = indexes[0];
         while(indexes[1] == indexes[0]) {
-            indexes[1] = getRandomIndex(account);
+            indexes[1] = getPseudoRandomIndex(account);
         }
 
         indexes[2] = indexes[1];
         while((indexes[2] == indexes[0]) || (indexes[2] == indexes[1])) {
-            indexes[2] = getRandomIndex(account);
+            indexes[2] = getPseudoRandomIndex(account);
         }
 
         return indexes;
     }
 
     // Returns array of three non-duplicating integers from 0-9
-    function getRandomIndex
+    function getPseudoRandomIndex
                             (
                                 address account
                             )

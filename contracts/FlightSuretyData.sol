@@ -11,10 +11,22 @@ contract FlightSuretyData {
 
     address private contractOwner;                                      // Account used to deploy contract
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
+    
+    struct Airline {  
+        address airline;
+        uint256 balance;
+        bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. 
+    }    
+    mapping(address => Airline) private airlines;
+    address[] private registeredAirlines; // Makes it easier to obtain airline count
 
     /********************************************************************************************/
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
+
+    // Event fired when an airline is registered
+    // Other airlines watch this and validate the airline
+    event AirlineRegistered(address airline, bool isAllowedToVote);
 
 
     /**
@@ -56,9 +68,50 @@ contract FlightSuretyData {
         _;
     }
 
+    /**
+    * @dev Modifier that requires the Airline to be registered
+    */    
+    modifier requireAirlineIsRegistered(bool desiredState)
+    {
+        if(desiredState == true){
+            require(airlines[msg.sender].airline != address(0), "Airline is not registered"); 
+        }
+        else
+        {
+            require(airlines[msg.sender].airline == address(0), "Airline is already registered");
+        }
+        _;
+    }
+
+    /**
+    * @dev Only existing airline may register a new airline until there are at least four airlines registered.
+    */    
+
+    modifier requireFirstFourRestriction()
+    {
+        if(registeredAirlines.length < 4)
+        {
+            require(airlines[msg.sender].airline != contractOwner, "Currently, only registered airlines can register another airline."); 
+        }
+        _;
+    }
+
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
+
+    /**
+    * @dev Is the addressed mapped to an airline?
+    *
+    */      
+    function isAirline(address someAddress) 
+                            public 
+                            view 
+                            returns(bool) 
+    {
+        return (airlines[someAddress].airline != address(0));
+    }
+
 
     /**
     * @dev Get operating status of contract
@@ -95,7 +148,8 @@ contract FlightSuretyData {
 
    /**
     * @dev Add an airline to the registration queue
-    *      Can only be called from FlightSuretyApp contract
+    *      Can only be called from FlightSuretyApp contract.
+    *      Only existing airline may register a new airline until there are at least four airlines registered.
     *
     */   
     function registerAirline
@@ -105,11 +159,14 @@ contract FlightSuretyData {
                             external
 
                             requireIsOperational
-                            //requireIsCallerAuthorized
-
+                            requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
+                            requireFirstFourRestriction()
+                            
                             returns(bool success)
     {
-                            //requireIsCallerAirlineFounded(originSender)
+                            airlines[airline] = Airline(airline, 0, false); // add new airline to mapping
+                            registeredAirlines.push(airline);               // add to array
+                            emit AirlineRegistered(airline, false);
     }
 
 
@@ -157,16 +214,33 @@ contract FlightSuretyData {
     */   
     function fund
                             (   
+                                //address airline
                             )
                             public
                             payable
+
+                            requireAirlineIsRegistered(true)
     {
+        address airline = msg.sender;
+        // Add msg.value to balance
+        airlines[airline].balance.add(msg.value); //SafeMath add
+        
+        
+        //Check balance. If > 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.
+        if (airlines[airline].balance > 10) {
+             airlines[airline].isAllowedToVote = true;
+             emit AirlineRegistered(airline, airlines[airline].isAllowedToVote);
+        }
+        else {
+            airlines[airline].isAllowedToVote = false;
+        }
     }
 
     function getFlightKey
                         (
                             address airline,
                             string memory flight,
+                            //string flight,
                             uint256 timestamp
                         )
                         pure
@@ -178,6 +252,7 @@ contract FlightSuretyData {
 
     /**
     * @dev Fallback function for funding smart contract.
+    *      "Fallback functions are also executed whenever a contract would receive plain Ether, without any data."
     *
     */
     function() 
@@ -189,4 +264,3 @@ contract FlightSuretyData {
 
 
 }
-
