@@ -187,7 +187,7 @@ contract FlightSuretyData {
 
                             requireIsOperational()
                             requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
-                            requireAirlineIsFunded()
+                            //requireAirlineIsFunded()
                             requireFirstFourRestriction()
                             
                             returns(bool success)
