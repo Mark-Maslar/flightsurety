@@ -24,6 +24,8 @@ contract FlightSuretyData {
     /*                                       EVENT DEFINITIONS                                  */
     /********************************************************************************************/
 
+    event ContractOwner(address contractOwner);
+
     // Event fired when an airline is registered
     // Other airlines watch this and validate the airline
     event AirlineRegistered(address airline, bool isAllowedToVote);
@@ -36,9 +38,10 @@ contract FlightSuretyData {
     constructor
                                 (
                                 ) 
-                                public 
+                                public
     {
         contractOwner = msg.sender;
+        emit ContractOwner(contractOwner);
     }
 
     /********************************************************************************************/
@@ -87,6 +90,16 @@ contract FlightSuretyData {
     * @dev Only existing airline may register a new airline until there are at least four airlines registered.
     */    
 
+    modifier requireAirlineIsFunded()
+    {
+        require(airlines[msg.sender].balance >= 10, "Airline is not sufficiently funded."); 
+        _;
+    }
+
+    /**
+    * @dev Only existing airline may register a new airline until there are at least four airlines registered.
+    */    
+
     modifier requireFirstFourRestriction()
     {
         if(registeredAirlines.length < 4)
@@ -99,6 +112,20 @@ contract FlightSuretyData {
     /********************************************************************************************/
     /*                                       UTILITY FUNCTIONS                                  */
     /********************************************************************************************/
+    /**
+    * @dev Is the addressed mapped to an airline?
+    *
+    */   
+   
+    function authorizeCaller(address _callerAddress) 
+                            public 
+                            returns(bool)
+
+    {
+        contractOwner = _callerAddress;
+        emit ContractOwner(contractOwner);
+        return true;
+    }
 
     /**
     * @dev Is the addressed mapped to an airline?
@@ -137,7 +164,7 @@ contract FlightSuretyData {
                                 bool mode
                             ) 
                             external
-                            requireContractOwner 
+                            requireAirlineIsRegistered(true)
     {
         operational = mode;
     }
@@ -158,8 +185,9 @@ contract FlightSuretyData {
                             )
                             external
 
-                            requireIsOperational
+                            requireIsOperational()
                             requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
+                            requireAirlineIsFunded()
                             requireFirstFourRestriction()
                             
                             returns(bool success)

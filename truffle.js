@@ -4,26 +4,26 @@ var NonceTrackerSubprovider = require("web3-provider-engine/subproviders/nonce-t
 
 module.exports = {
   networks: {
-  //   development: {
-  //     provider: function() {
-  //       return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/", 0, 50);
-  //     },
-  //     network_id: '*',
-  //     gas: 4612388
-  //   }
-  // },
-  development: {
-    provider: function() {
-      var wallet = new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/", 0, 50);
-      var nonceTracker = new NonceTrackerSubprovider()
-      wallet.engine._providers.unshift(nonceTracker)
-      nonceTracker.setEngine(wallet.engine)
-      return wallet      
-    },
-    network_id: '*',
-    gas: 4612388
-  }
-},  
+    development: {
+      provider: function() {
+        return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/", 0, 50);
+      },
+      network_id: '*',
+      gas: 4612388
+    }
+  },
+//   development2: {
+//     provider: function() {
+//       var wallet = new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/", 0, 50);
+//       var nonceTracker = new NonceTrackerSubprovider()
+//       wallet.engine._providers.unshift(nonceTracker)
+//       nonceTracker.setEngine(wallet.engine)
+//       return wallet      
+//     },
+//     network_id: '*',
+//     gas: 4612388
+//   }
+// },  
   infura: {
     provider: function() { 
       return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/76ac8ac11a5e4aa4b10788976ee55439') 

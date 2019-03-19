@@ -120,7 +120,7 @@ contract FlightSuretyApp {
 
 
    /**
-    * @dev Register a future flight for insuring.
+    * @dev Register a future flight for insuring.ef
     *
     */  
     function registerFlight
