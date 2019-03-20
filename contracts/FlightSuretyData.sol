@@ -13,7 +13,7 @@ contract FlightSuretyData {
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
     
     struct Airline {  
-        address airline;
+        address airlineWalletAddress;
         uint256 balance;
         bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. 
     }    
@@ -28,7 +28,7 @@ contract FlightSuretyData {
 
     // Event fired when an airline is registered
     // Other airlines watch this and validate the airline
-    event AirlineRegistered(address airline, bool isAllowedToVote);
+    event AirlineRegistered(address airlineWalletAddress, bool isAllowedToVote);
 
 
     /**
@@ -77,11 +77,11 @@ contract FlightSuretyData {
     modifier requireAirlineIsRegistered(bool desiredState)
     {
         if(desiredState == true){
-            require(airlines[msg.sender].airline != address(0), "Airline is not registered"); 
+            require(airlines[msg.sender].airlineWalletAddress != address(0), "Airline is not registered"); 
         }
         else
         {
-            require(airlines[msg.sender].airline == address(0), "Airline is already registered");
+            require(airlines[msg.sender].airlineWalletAddress == address(0), "Airline is already registered");
         }
         _;
     }
@@ -104,7 +104,7 @@ contract FlightSuretyData {
     {
         if(registeredAirlines.length < 4)
         {
-            require(airlines[msg.sender].airline != contractOwner, "Currently, only registered airlines can register another airline."); 
+            require(airlines[msg.sender].airlineWalletAddress != contractOwner, "Currently, only registered airlines can register another airline."); 
         }
         _;
     }
@@ -136,7 +136,7 @@ contract FlightSuretyData {
                             view 
                             returns(bool) 
     {
-        return (airlines[someAddress].airline != address(0));
+        return (airlines[someAddress].airlineWalletAddress != address(0));
     }
 
 
@@ -181,20 +181,20 @@ contract FlightSuretyData {
     */   
     function registerAirline
                             (address originSender,
-                            address airline  
+                            address airlineWalletAddress  
                             )
                             external
 
                             requireIsOperational()
                             requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
-                            //requireAirlineIsFunded()
+                            ////requireAirlineIsFunded()
                             requireFirstFourRestriction()
                             
                             returns(bool success)
     {
-                            airlines[airline] = Airline(airline, 0, false); // add new airline to mapping
-                            registeredAirlines.push(airline);               // add to array
-                            emit AirlineRegistered(airline, false);
+                            airlines[airlineWalletAddress] = Airline(airlineWalletAddress, 0, false); // add new airline to mapping
+                            registeredAirlines.push(airlineWalletAddress);               // add to array
+                            emit AirlineRegistered(airlineWalletAddress, false);
     }
 
 
