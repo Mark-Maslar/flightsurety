@@ -1,0 +1,4 @@
+# Ignore folders
+build/
+environment_scripts/
+node_modules/
