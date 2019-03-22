@@ -14,7 +14,7 @@ contract FlightSuretyData {
     
     struct Airline {  
         address airlineWalletAddress;
-        uint256 balance;
+        //uint256 balance;
         bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. 
     }    
     mapping(address => Airline) private airlines;
@@ -92,7 +92,9 @@ contract FlightSuretyData {
 
     modifier requireAirlineIsFunded()
     {
-        require(airlines[msg.sender].balance >= 10, "Airline is not sufficiently funded."); 
+        uint256 balance = await web3.eth.getBalance(msg.sender);
+        require(balance >= 10, "Airline is not sufficiently funded."); 
+        //require(airlines[msg.sender].balance >= 10, "Airline is not sufficiently funded."); 
         _;
     }
 
@@ -180,8 +182,8 @@ contract FlightSuretyData {
     *
     */   
     function registerAirline
-                            (address originSender,
-                            address airlineWalletAddress  
+                            (address newAirlineWalletAddress
+                            //address originSender
                             )
                             external
 
@@ -192,9 +194,9 @@ contract FlightSuretyData {
                             
                             returns(bool success)
     {
-                            airlines[airlineWalletAddress] = Airline(airlineWalletAddress, 0, false); // add new airline to mapping
-                            registeredAirlines.push(airlineWalletAddress);               // add to array
-                            emit AirlineRegistered(airlineWalletAddress, false);
+                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, false); // add new airline to mapping
+                            registeredAirlines.push(newAirlineWalletAddress);               // add to array
+                            emit AirlineRegistered(newAirlineWalletAddress, false);
     }
 
 

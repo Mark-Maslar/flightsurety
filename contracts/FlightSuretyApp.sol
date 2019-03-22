@@ -81,7 +81,7 @@ contract FlightSuretyApp {
         contractOwner = msg.sender;
         //First airline is registered when contract is deployed.
         flightSuretyData = FlightSuretyData(dataContract);
-        flightSuretyData.registerAirline(contractOwner, contractOwner); ///TODO replace w/ wallet address x??? Presume it to be an airline.
+        flightSuretyData.registerAirline(contractOwner); ///TODO replace w/ wallet address x??? Presume it to be an airline.
         
     }
 
@@ -114,7 +114,7 @@ contract FlightSuretyApp {
                             // pure
                             returns(bool success, uint256 votes)
     {
-        flightSuretyData.registerAirline(msg.sender, airline);
+        flightSuretyData.registerAirline(airline);
         return (success, 0);
     }
 
@@ -348,8 +348,8 @@ contract FlightSuretyApp {
 //Interface -- reference to the Data Contract
 contract FlightSuretyData {
         function registerAirline
-                            (address originSender,
-                            address airline  
+                            (//address originSender,
+                            address newAirlineWalletAddress  
                             )
                             external;
 }
