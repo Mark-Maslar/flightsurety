@@ -102,9 +102,10 @@ contract('Flight Surety Tests', async (accounts) => {
   it('(airline) cannot register an Airline using registerAirline() if it is not funded', async () => {
     
     // ARRANGE
-    // let balance0 = await web3.eth.getBalance(accounts[0])
+    const appContract = await FlightSuretyApp.deployed()
     let newAirline = accounts[1];
-    // console.log(accounts[0] + " : " + balance0);
+    await contract.fund({from: newAirline, value: web3.utils.toWei('10', 'ether')});
+    console.log(newAirline + " : " + airlines[airline].balance);
     // console.log(accounts[1] + " : " + await web3.eth.getBalance(accounts[1]));
     // console.log(accounts[2] + " : " + await web3.eth.getBalance(accounts[2]));
     // console.log(accounts[3] + " : " + await web3.eth.getBalance(accounts[3]));
