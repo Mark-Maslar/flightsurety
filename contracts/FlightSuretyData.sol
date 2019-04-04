@@ -12,9 +12,10 @@ contract FlightSuretyData {
     address private contractOwner;                                      // Account used to deploy contract
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
     
-    struct Airline {  
+    struct Airline {
         address airlineWalletAddress;
         uint256 balance;
+        bool isRegistered;
         bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. 
     }    
     mapping(address => Airline) private airlines;
@@ -71,19 +72,27 @@ contract FlightSuretyData {
         _;
     }
 
+    modifier requireNotAlreadyRegistered(address newAirline)
+    {
+        require(airlines[newAirline].isRegistered != true, "Airline is already registered");
+        _;
+    }
+
     /**
     * @dev Modifier that requires the Airline to be registered
     */    
-    modifier requireAirlineIsRegistered(bool desiredState)
+    modifier requireAirlineIsRegistered(address newAirline)
     {
-        if(desiredState == true){
-            require(airlines[msg.sender].airlineWalletAddress != address(0), "Airline is not registered"); 
-        }
-        else
-        {
-            require(airlines[msg.sender].airlineWalletAddress == address(0), "Airline is already registered");
-        }
-        _;
+        // if(desiredState == true){
+        //     require(airlines[msg.sender].airlineWalletAddress != address(0), "Airline is not registered"); 
+        // }
+        // else
+        // {
+        //     require(airlines[msg.sender].airlineWalletAddress == address(0), "Airline is already registered");
+        // }
+        // _;
+        require(airlines[newAirline].isRegistered == true, "Airline is not registered");
+        _;        
     }
 
     /**
@@ -164,7 +173,7 @@ contract FlightSuretyData {
                                 bool mode
                             ) 
                             external
-                            requireAirlineIsRegistered(true)
+                            ////requireAirlineIsRegistered(true)
     {
         operational = mode;
     }
@@ -180,19 +189,20 @@ contract FlightSuretyData {
     *
     */   
     function registerAirline
-                            (address newAirlineWalletAddress
-                            //address originSender
+                            (address newAirlineWalletAddress,
+                            address originSender
                             )
                             external
 
                             requireIsOperational()
-                            requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
-                            ////requireAirlineIsFunded()
+                            //requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
+                            requireNotAlreadyRegistered(newAirlineWalletAddress)
+                            requireAirlineIsFunded()
                             requireFirstFourRestriction()
                             
                             returns(bool success)
     {
-                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, false); // add new airline to mapping
+                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, false, false); // add new airline to mapping
                             registeredAirlines.push(newAirlineWalletAddress);               // add to array
                             emit AirlineRegistered(newAirlineWalletAddress, false);
     }
@@ -242,12 +252,12 @@ contract FlightSuretyData {
     */   
     function fund
                             (   
-                                //address airline
+                                address airline
                             )
                             public
                             payable
 
-                            requireAirlineIsRegistered(true)
+                            requireAirlineIsRegistered(airline)
     {
         address airline = msg.sender;
         // Add msg.value to balance
