@@ -30,6 +30,7 @@ contract('Oracles', async (accounts) => {
       await config.flightSuretyApp.registerOracle({ from: accounts[a], value: fee });
       let result = await config.flightSuretyApp.getMyIndexes.call({from: accounts[a]});
       console.log(`Oracle Registered: ${result[0]}, ${result[1]}, ${result[2]}`);
+      assert.equal(result[0] > -1, true, "Invalid Oracle Index");
     }
   });
 
@@ -47,22 +48,26 @@ contract('Oracles', async (accounts) => {
     // loop through all the accounts and for each account, all its Indexes (indices?)
     // and submit a response. The contract will reject a submission if it was
     // not requested so while sub-optimal, it's a good test of that feature
+    // for(let a=1; a<3; a++) {
     for(let a=1; a<TEST_ORACLES_COUNT; a++) {
-
+      console.log('accounts[' + a + '] ' + accounts[a]);
       // Get oracle information
       let oracleIndexes = await config.flightSuretyApp.getMyIndexes.call({ from: accounts[a]});
       for(let idx=0;idx<3;idx++) {
 
+        let ResponseResult = true;
         try {
           // Submit a response...it will only be accepted if there is an Index match
-          await config.flightSuretyApp.submitOracleResponse(oracleIndexes[idx], config.firstAirline, flight, timestamp, STATUS_CODE_ON_TIME, { from: accounts[a] });
-
+          // let result = await config.flightSuretyApp.submitOracleResponse(oracleIndexes[idx], config.firstAirline, flight, timestamp, STATUS_CODE_ON_TIME, { from: accounts[a] });
+          let result = await config.flightSuretyApp.submitOracleResponse(oracleIndexes[idx], config.firstAirline, flight, timestamp, 10, { from: accounts[a] });
+          // console.log('fetchFlightStatus submitOracleResponse: ' + result);
         }
         catch(e) {
           // Enable this when debugging
-           console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp);
+           ResponseResult = false;
+           console.log('\nError', idx, oracleIndexes[idx].toNumber(), flight, timestamp, e.message);
         }
-
+        assert.equal(ResponseResult, true, "Invalid Oracle Response for Oracle #" + a);
       }
     }
 
