@@ -1,0 +1,74 @@
+For an airline to be able to vote for registration it is required that it has ?? payed 10 ether
+For a consumer to be able to buy insurance for a flight it is required that the airline has ?? payed 10 ether
+
+the flight struct and its mapping should be in the Data contract
+You may find useful to have the struct, not the mapping of flights, in the App contract to organize the data of the function during its execution or if you fetch a Flight from the Data contract to get it when you call a function from the Data contract that returns a flight
+
+
+using SafeMath for uint256;
+mapping(address => uint256) private sales;
+function safeWithdraw(uint256 amount) external {
+//Checks
+require(msg.sender == tx.origin, "Contracts not allowed"); //Ensure that this is callable only by an EOA Externally Owned Account.
+require(sales[msg.sender] >= amount, Iinsufficient funds");
+
+//Effects
+uint256 amount = sales[msg.sender];
+sales[msg.sender] = sales[msg.sender].sub(amount);
+
+//Interaction
+msg.sender.transfer(amount);
+}
+
+//environment --------------
+
+git remote add origin https://github.com/Mark-Maslar/flightsurety
+git push -u origin --all
+
+git pull https://github.com/Mark-Maslar/flightsurety
+// -------------------------
+
+
+//Rate Limiting
+using SafeMath for uint256;
+uint256 private enabled = block.timestamp;
+
+modifier rateLimit(uint time) {
+require(block.timestamp >= enabled, "Rate limiting in effect");
+enabled=enabled.add(time);
+_;
+}
+
+function safeWithdraw(uint256 amount) external rateLimit(30 minutes) {
+//TODO Code for withdraw
+}
+
+
+  it('(flight) an airline can register a flight after giving minimum funds of 10 ether', async () => {
+    const contract = await FlightSuretyApp.deployed()
+await contract.addFunds({from: airline1, value: web3.utils.toWei('10', 'ether')});
+
+
+Error: the tx doesn’t have the correct nonce. account has nonce of: 2 tx has nonce of: 3
+There is apparently a problem when running the 2 test files at the same time: truffle test. This causes a problem with the nonces. It works fine and it is ACCEPTABLE to run each test file separately: 
+truffle test ../test/flightSurety.js 
+truffle test ../test/oracles.js
+
+use web3.eth.getBalance(passenger) in the truffle test file
+
+
+struct Airline {
+        bool isRegistered;
+        bool isFunded;
+    }
+"I think it is a good idea to store the name of the airline to identify it"
+
+
+-------
+
+The end of term date is May 7th, however all students 
+get an automatic 4 week extension, so the final deadline 
+that all projects need to be submitted, reviewed and 
+marked as ‘complete’ is June 4th
+
+-------------

@@ -173,6 +173,8 @@ contract FlightSuretyData {
                                 bool mode
                             ) 
                             external
+                            requireContractOwner()
+                            //// requireIsOperational()
                             ////requireAirlineIsRegistered(true)
     {
         operational = mode;
@@ -202,7 +204,7 @@ contract FlightSuretyData {
                             
                             returns(bool success)
     {
-                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, false, false); // add new airline to mapping
+                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, true, false); // add new airline to mapping
                             registeredAirlines.push(newAirlineWalletAddress);               // add to array
                             emit AirlineRegistered(newAirlineWalletAddress, false);
     }
@@ -225,11 +227,16 @@ contract FlightSuretyData {
      *  @dev Credits payouts to insurees
     */
     function creditInsurees
-                                (
+                                ( 
+                                    // address airline,
+                                    // string memory flight,
+                                    // uint256 timestamp
                                 )
                                 external
                                 pure
     {
+
+        // TODO Process refunds
     }
     
 
@@ -257,9 +264,9 @@ contract FlightSuretyData {
                             public
                             payable
 
-                            requireAirlineIsRegistered(airline)
+                            //// requireAirlineIsRegistered(airline)
     {
-        address airline = msg.sender;
+        // address airline = msg.sender;
         // Add msg.value to balance
         airlines[airline].balance.add(msg.value); //SafeMath add
         
@@ -297,7 +304,7 @@ contract FlightSuretyData {
                             external 
                             payable 
     {
-        fund();
+        fund(contractOwner);
     }
 
 
