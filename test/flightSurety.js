@@ -103,14 +103,14 @@ contract('Flight Surety Tests', async (accounts) => {
     
     // ARRANGE
     ////const appContract = await flightSuretyApp.deployed()
-    let newAirline = accounts[1];
-    //await config.flightSuretyData.fund({from: newAirline, value: web3.toWei('10', 'ether')});
-    await config.flightSuretyData.fund(newAirline, {value: web3.toWei('10', 'ether')});
-    console.log(newAirline + " : " + airlines[airline].balance);
-    console.log(accounts[1] + " : " + web3.eth.getBalance(accounts[1]));
+    let newAirline = accounts[15];
+    // await config.flightSuretyData.fund({from: newAirline, value: web3.toWei('10', 'ether')});
+    // await config.flightSuretyData.fund(newAirline, {value: web3.toWei('10', 'ether')});
+    // console.log(newAirline + " : " + airlines[airline].balance);
+    // console.log(accounts[1] + " : " + web3.eth.getBalance(accounts[1]));
     // console.log(accounts[2] + " : " + await web3.eth.getBalance(accounts[2]));
     // console.log(accounts[3] + " : " + await web3.eth.getBalance(accounts[3]));
-
+    await config.flightSuretyApp.registerAirline.sendTransaction(newAirline, {from: config.firstAirline});
 
     // ACT
     try {

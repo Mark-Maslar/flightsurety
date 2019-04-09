@@ -147,7 +147,7 @@ contract FlightSuretyApp {
                                 pure
     {
         if(statusCode == STATUS_CODE_LATE_AIRLINE) {
-            flightSuretyData.creditInsurees(airline, flight, timestamp);
+            // flightSuretyData.creditInsurees(airline, flight, timestamp);
         }        
     }
 

@@ -51,8 +51,8 @@ await contract.addFunds({from: airline1, value: web3.utils.toWei('10', 'ether')}
 
 Error: the tx doesn’t have the correct nonce. account has nonce of: 2 tx has nonce of: 3
 There is apparently a problem when running the 2 test files at the same time: truffle test. This causes a problem with the nonces. It works fine and it is ACCEPTABLE to run each test file separately: 
-truffle test ../test/flightSurety.js 
-truffle test ../test/oracles.js
+truffle test ./test/flightSurety.js 
+truffle test ./test/oracles.js
 
 use web3.eth.getBalance(passenger) in the truffle test file
 
