@@ -71,9 +71,11 @@ contract('Flight Surety Tests', async (accounts) => {
       let accessDenied = false;
       try 
       {
-          await config.flightSuretyData.setOperatingStatus(false);
+        // await config.flightSuretyData.setOperatingStatus(false, { from: config.testAddresses[0] });
+        await config.flightSuretyData.setOperatingStatus(false, {from: config.firstAirline});
       }
       catch(e) {
+        console.log("Can allow access error: " + e.message);
           accessDenied = true;
       }
       assert.equal(accessDenied, false, "Access not restricted to Contract Owner");
@@ -90,7 +92,8 @@ contract('Flight Surety Tests', async (accounts) => {
           await config.flightSurety.setTestingMode(true);
       }
       catch(e) {
-          reverted = true;
+        console.log("Can block access error: " + e.message);
+        reverted = true;
       }
       assert.equal(reverted, true, "Access not blocked for requireIsOperational");      
 
@@ -118,7 +121,7 @@ contract('Flight Surety Tests', async (accounts) => {
         await config.flightSuretyApp.registerAirline(newAirline, {from: accounts[0]});
     }
     catch(e) {
-
+        console.log(e.message);
     }
     let result = await config.flightSuretyData.isAirline.call(newAirline); 
 
