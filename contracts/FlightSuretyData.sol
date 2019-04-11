@@ -63,6 +63,13 @@ contract FlightSuretyData {
         _;  // All modifiers require an "_" which indicates where the function body will be added
     }
 
+    modifier requireIsNotOperational() 
+    {
+        require(!operational, "Only supported if contract is not operational");
+        _;  // All modifiers require an "_" which indicates where the function body will be added
+    }
+
+
     /**
     * @dev Modifier that requires the "ContractOwner" account to be the function caller
     */
@@ -174,7 +181,7 @@ contract FlightSuretyData {
                             ) 
                             external
                             requireContractOwner()
-                            //// requireIsOperational()
+                            // requireIsNotOperational() // This function kills the contract, and it stays killed.
                             ////requireAirlineIsRegistered(true)
     {
         operational = mode;
