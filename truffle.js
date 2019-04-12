@@ -5,11 +5,9 @@ var NonceTrackerSubprovider = require("web3-provider-engine/subproviders/nonce-t
 module.exports = {
   networks: {
     development: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/", 0, 50);
-      },
-      network_id: '*',
-      gas: 4612388
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "*" // Match any network id
     }
   },
 //   development2: {
