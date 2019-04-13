@@ -1,8 +1,9 @@
 pragma solidity ^0.4.25;
 
 import "../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./Ownable.sol";
 
-contract FlightSuretyData {
+contract FlightSuretyData is Ownable {
     using SafeMath for uint256;
 
     /********************************************************************************************/
@@ -184,6 +185,7 @@ contract FlightSuretyData {
                             // requireIsNotOperational() // This function kills the contract, and it stays killed.
                             ////requireAirlineIsRegistered(true)
     {
+        emit ContractOwner(contractOwner);
         operational = mode;
     }
 

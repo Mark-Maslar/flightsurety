@@ -1,6 +1,6 @@
-var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = "spirit supply whale amount human item harsh scare congress discover talent hamster";
-var NonceTrackerSubprovider = require("web3-provider-engine/subproviders/nonce-tracker")
+// var HDWalletProvider = require("truffle-hdwallet-provider");
+// var mnemonic = "spirit supply whale amount human item harsh scare congress discover talent hamster";
+// var NonceTrackerSubprovider = require("web3-provider-engine/subproviders/nonce-tracker")
 
 module.exports = {
   networks: {

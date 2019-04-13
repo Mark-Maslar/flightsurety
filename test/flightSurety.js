@@ -1,4 +1,3 @@
-
 var Test = require('../config/testConfig.js');
 var BigNumber = require('bignumber.js');
 
@@ -36,6 +35,7 @@ contract('Flight Surety Tests', async (accounts) => {
   before('setup contract', async () => {
     config = await Test.Config(accounts);
     await config.flightSuretyData.authorizeCaller(config.flightSuretyApp.address);
+    console.log("testConfig.js owner's address: " + config.owner);
   });
 
   /****************************************************************************************/
@@ -71,14 +71,14 @@ contract('Flight Surety Tests', async (accounts) => {
       let accessDenied = false;
       try 
       {
-        // await config.flightSuretyData.setOperatingStatus(false, { from: config.testAddresses[2] });
-        // await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
-        await config.flightSuretyData.setOperatingStatus(false);
-        //wait config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
+        // await config.flightSuretyData.setOperatingStatus(false, { from: config.testAddresses[0] });
+        await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
+        // await config.flightSuretyData.setOperatingStatus(false);
+        // await config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
       }
       catch(e) {
         console.log("Can allow access error: " + e.message);
-          accessDenied = true;
+        accessDenied = true;
       }
       assert.equal(accessDenied, true, "Access not restricted to Contract Owner");
       
@@ -86,10 +86,11 @@ contract('Flight Surety Tests', async (accounts) => {
 
   it(`(multiparty) can block access to functions using requireIsOperational when operating status is false`, async function () {
 
+    console.log("Truffle test owner's address: " + config.owner);
       try {
         // await config.flightSuretyData.setOperatingStatus(false);
-        await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
-        // await config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
+        // await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
+        await config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
         // await config.flightSuretyData.setOperatingStatus(false, {from: config.testAddresses[0]});
       }
       catch(e) {
