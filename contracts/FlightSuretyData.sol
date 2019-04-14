@@ -157,10 +157,10 @@ contract FlightSuretyData is Ownable {
         return (airlines[someAddress].airlineAddress != address(0));
     }
 
-    function isAirlineFunded(address airline) external //view 
+    function isAirlineFunded(address airline) external 
         returns(bool)        
         {
-            (airlines[airline].balance >= 10);
+            return (airlines[airline].balance >= 10);
         }
 
 

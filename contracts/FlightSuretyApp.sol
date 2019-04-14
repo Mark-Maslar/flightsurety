@@ -355,7 +355,7 @@ contract FlightSuretyApp {
     }
 
     function isAirlineFunded(address airline) external returns(bool){
-        flightSuretyData.isAirlineFunded(airline);
+        return flightSuretyData.isAirlineFunded(airline);
     }
 
     function setOperatingStatus(bool mode) external {
@@ -370,7 +370,7 @@ contract FlightSuretyApp {
 contract FlightSuretyData {
         function creditInsurees(address airline, string flight, uint256 timestamp) external view;
 
-        function isAirlineFunded(address airline) external;
+        function isAirlineFunded(address airline) external returns(bool);
 
         function setOperatingStatus(bool mode, address sender) external;
 
