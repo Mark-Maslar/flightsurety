@@ -69,7 +69,7 @@ contract FlightSuretyApp {
     */
     modifier requireAirlineIsFunded()
     {
-        require(isAirlineFunded(msg.sender), "Airline is not funded.");
+        // require(isAirlineFunded(msg.sender), "Airline is not funded.");
         _;
     }
     
@@ -116,10 +116,12 @@ contract FlightSuretyApp {
     * @dev Add an airline to the registration queue
     * TODO Only existing airline may register a new airline until there are at least four airlines registered
     */   
-    function registerAirline(address airline) external
-    //require is msg.sender funded?
+    function registerAirline(address airline)         
+        external
         returns(bool success, uint256 votes)
     {
+        require(flightSuretyData.isAirlineFunded(msg.sender), "Airline is not funded.");
+        // require(isAirlineFunded(msg.sender), "Airline is not funded.");
         flightSuretyData.registerAirline(airline);
         return (success, 0);
     }
