@@ -120,8 +120,8 @@ contract FlightSuretyApp {
         external
         returns(bool success, uint256 votes)
     {
-        require(flightSuretyData.isAirlineFunded(msg.sender), "Airline is not funded.");
-        // require(isAirlineFunded(msg.sender), "Airline is not funded.");
+        require(flightSuretyData.isAirlineFunded(airline), "Airline is not funded.");
+        // require(isAirlineFunded(airline), "Airline is not funded.");
         flightSuretyData.registerAirline(airline);
         return (success, 0);
     }
