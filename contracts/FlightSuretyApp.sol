@@ -50,7 +50,7 @@ contract FlightSuretyApp {
     */
     modifier requireIsOperational() 
     {
-         // Modify to call data contract's status
+         // TODO Modify to call data contract's status
         require(true, "Contract is currently not operational");  
         _;  // All modifiers require an "_" which indicates where the function body will be added
     }
@@ -63,6 +63,16 @@ contract FlightSuretyApp {
         require(msg.sender == contractOwner, "Caller is not contract owner");
         _;
     }
+
+    /**
+    * @dev Modifier that requires the caller airline to be funded
+    */
+    modifier requireAirlineIsFunded()
+    {
+        require(isAirlineFunded(msg.sender), "Airline is not funded.");
+        _;
+    }
+    
 
     /********************************************************************************************/
     /*                                       CONSTRUCTOR                                        */
@@ -106,13 +116,9 @@ contract FlightSuretyApp {
     * @dev Add an airline to the registration queue
     * TODO Only existing airline may register a new airline until there are at least four airlines registered
     */   
-    function registerAirline
-                            ( 
-                                address airline  
-                            )
-                            external
-                            // pure
-                            returns(bool success, uint256 votes)
+    function registerAirline(address airline) external
+    //require is msg.sender funded?
+        returns(bool success, uint256 votes)
     {
         flightSuretyData.registerAirline(airline);
         return (success, 0);
@@ -144,11 +150,11 @@ contract FlightSuretyApp {
                                     uint8 statusCode
                                 )
                                 internal
-                                pure
+                                // pure
     {
         if(statusCode == STATUS_CODE_LATE_AIRLINE) {
-            // weirdness... sometimes the compiler can't find creditInsurees function
-        //    flightSuretyData.creditInsurees(airline, flight, timestamp);
+           flightSuretyData.creditInsurees(airline, flight, timestamp);
+        //    creditInsurees(airline, flight, timestamp);
         }        
     }
 
@@ -344,13 +350,30 @@ contract FlightSuretyApp {
         return random;
     }
 
-// endregion
+    function creditInsurees(address airline, string flight, uint256 timestamp) external {
+        flightSuretyData.creditInsurees(airline, flight, timestamp);
+    }
+
+    function isAirlineFunded(address airline) external returns(bool){
+        flightSuretyData.isAirlineFunded(airline);
+    }
+
+    function setOperatingStatus(bool mode) external {
+        flightSuretyData.setOperatingStatus(mode, msg.sender);
+    }
+
 
 }   
 
 
 //Interface -- reference to the Data Contract
 contract FlightSuretyData {
+        function creditInsurees(address airline, string flight, uint256 timestamp) external view;
+
+        function isAirlineFunded(address airline) external;
+
+        function setOperatingStatus(bool mode, address sender) external;
+
         function registerAirline
                             (//address originSender,
                             address newAirlineWalletAddress  

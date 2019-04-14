@@ -14,7 +14,7 @@ contract FlightSuretyData is Ownable {
     bool private operational = true;                                    // Blocks all state changes throughout the contract if false
     
     struct Airline {
-        address airlineWalletAddress;
+        address airlineAddress;
         uint256 balance;
         bool isRegistered;
         bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. 
@@ -30,7 +30,7 @@ contract FlightSuretyData is Ownable {
 
     // Event fired when an airline is registered
     // Other airlines watch this and validate the airline
-    event AirlineRegistered(address airlineWalletAddress, bool isAllowedToVote);
+    event AirlineRegistered(address airlineAddress, bool isAllowedToVote);
 
 
     /**
@@ -92,11 +92,11 @@ contract FlightSuretyData is Ownable {
     modifier requireAirlineIsRegistered(address newAirline)
     {
         // if(desiredState == true){
-        //     require(airlines[msg.sender].airlineWalletAddress != address(0), "Airline is not registered"); 
+        //     require(airlines[msg.sender].airlineAddress != address(0), "Airline is not registered"); 
         // }
         // else
         // {
-        //     require(airlines[msg.sender].airlineWalletAddress == address(0), "Airline is already registered");
+        //     require(airlines[msg.sender].airlineAddress == address(0), "Airline is already registered");
         // }
         // _;
         require(airlines[newAirline].isRegistered == true, "Airline is not registered");
@@ -107,9 +107,10 @@ contract FlightSuretyData is Ownable {
     * @dev Only existing airline may register a new airline until there are at least four airlines registered.
     */    
 
-    modifier requireAirlineIsFunded()
+    modifier requireAirlineIsFunded(address airline)
     {
-        require(airlines[msg.sender].balance >= 10, "Airline is not sufficiently funded."); 
+        // require(airlines[airline].balance >= 10, "Airline is not sufficiently funded."); 
+        ////require(isAirlineFunded(airline), "Airline is not sufficiently funded."); 
         _;
     }
 
@@ -121,7 +122,7 @@ contract FlightSuretyData is Ownable {
     {
         if(registeredAirlines.length < 4)
         {
-            require(airlines[msg.sender].airlineWalletAddress != contractOwner, "Currently, only registered airlines can register another airline."); 
+            require(airlines[msg.sender].airlineAddress != contractOwner, "Currently, only registered airlines can register another airline."); 
         }
         _;
     }
@@ -153,8 +154,14 @@ contract FlightSuretyData is Ownable {
                             view 
                             returns(bool) 
     {
-        return (airlines[someAddress].airlineWalletAddress != address(0));
+        return (airlines[someAddress].airlineAddress != address(0));
     }
+
+    function isAirlineFunded(address airline) external //view 
+        returns(bool)        
+        {
+            (airlines[airline].balance >= 10);
+        }
 
 
     /**
@@ -200,22 +207,22 @@ contract FlightSuretyData is Ownable {
     *
     */   
     function registerAirline
-                            (address newAirlineWalletAddress,
+                            (address newairlineAddress,
                             address originSender
                             )
                             external
 
                             requireIsOperational()
                             //requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered
-                            requireNotAlreadyRegistered(newAirlineWalletAddress)
-                            requireAirlineIsFunded()
+                            requireNotAlreadyRegistered(newairlineAddress)
+                            requireAirlineIsFunded(msg.sender)
                             requireFirstFourRestriction()
                             
                             returns(bool success)
     {
-                            airlines[newAirlineWalletAddress] = Airline(newAirlineWalletAddress, 0, true, false); // add new airline to mapping
-                            registeredAirlines.push(newAirlineWalletAddress);               // add to array
-                            emit AirlineRegistered(newAirlineWalletAddress, false);
+                            airlines[newairlineAddress] = Airline(newairlineAddress, 0, true, false); // add new airline to mapping
+                            registeredAirlines.push(newairlineAddress);               // add to array
+                            emit AirlineRegistered(newairlineAddress, false);
     }
 
 
@@ -237,12 +244,11 @@ contract FlightSuretyData is Ownable {
     */
     function creditInsurees
                                 ( 
-                                    // address airline,
-                                    // string memory flight,
-                                    // uint256 timestamp
+                                    address airline,
+                                    string flight,
+                                    uint256 timestamp
                                 )
                                 external
-                                pure
     {
 
         // TODO Process refunds

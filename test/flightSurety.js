@@ -84,13 +84,43 @@ contract('Flight Surety Tests', async (accounts) => {
       
   });
 
+  // it(`(multiparty) can block access to functions using requireIsOperational when operating status is false`, async function () {
+
+  //   console.log("Truffle test owner's address: " + config.owner);
+  //     try {
+  //       await config.flightSuretyApp.setOperatingStatus(false);
+  //       // await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
+  //       // await config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
+  //       // await config.flightSuretyData.setOperatingStatus(false, {from: config.testAddresses[0]});
+  //     }
+  //     catch(e) {
+  //       console.log("setOperatingStatus error: " + e.message);
+  //     }
+
+  //     let reverted = false;
+  //     try 
+  //     {
+  //       // await config.flightSuretyData.isOperational({from: config.owner});
+  //       await config.flightSuretyApp.isOperational({from: config.testAddresses[0]});
+  //       // await config.flightSuretyData.isOperational();
+  //     }
+  //     catch(e) {
+  //       console.log("Can block isOperational error: " + e.message);
+  //       reverted = true;
+  //     }
+  //     assert.equal(reverted, false, "Access not blocked for requireIsOperational");      
+
+  //     // Set it back for other tests to work
+  //     await config.flightSuretyData.setOperatingStatus(true);
+
+  // });
   it(`(multiparty) can block access to functions using requireIsOperational when operating status is false`, async function () {
 
     console.log("Truffle test owner's address: " + config.owner);
       try {
         // await config.flightSuretyData.setOperatingStatus(false);
         // await config.flightSuretyData.setOperatingStatus(false, {from: config.owner});
-        await config.flightSuretyData.setOperatingStatus(false, {from: config.flightSuretyApp.address});
+        await config.flightSuretyApp.setOperatingStatus(false);
         // await config.flightSuretyData.setOperatingStatus(false, {from: config.testAddresses[0]});
       }
       catch(e) {
@@ -98,23 +128,23 @@ contract('Flight Surety Tests', async (accounts) => {
       }
 
       let reverted = false;
-      try 
+      try
       {
         // await config.flightSuretyData.isOperational({from: config.owner});
-        await config.flightSuretyData.isOperational({from: config.testAddresses[0]});
+        await config.flightSuretyApp.isOperational({from: config.testAddresses[0]});
         // await config.flightSuretyData.isOperational();
       }
       catch(e) {
         console.log("Can block isOperational error: " + e.message);
         reverted = true;
       }
-      assert.equal(reverted, false, "Access not blocked for requireIsOperational");      
+      assert.equal(reverted, false, "Access not blocked for requireIsOperational");
 
       // Set it back for other tests to work
-      await config.flightSuretyData.setOperatingStatus(true);
+      await config.flightSuretyApp.setOperatingStatus(true);
 
   });
-
+  
   it('(airline) cannot register an Airline using registerAirline() if it is not funded', async () => {
     
     // ARRANGE
