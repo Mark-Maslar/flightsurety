@@ -71,3 +71,29 @@ that all projects need to be submitted, reviewed and
 marked as ‘complete’ is June 4th
 
 -------------
+
+
+The deployer of which contract: Data or App contract is the first airline ?
+
+Hi there, you can use the FLightSuretyApp contract address or any other random address from your wallet
+
+You can achieve this by either creating an Airline on the FlightSuretyData constructor using the owner address (FlightSuretyData contract)
+
+---
+
+Hello, what exactly is the difference between the functions buy(), pay(), fund() and creditInsurees(). I am not sure what logic should be implemented in the functions?
+
+TODAY
+Stefanel S.
+
+4:39 PM
+
+Profile photo
+Hi! From my best understanding, the differences are:
+
+buy(): when a customer wishes to buy an insurance for a future flights.
+creditInsurees(): if a flight is delayed, ALL the insurees (all those that used buy() for that flight) get their balances credited with 1.5x the amount they paid in buy()
+pay() - this is triggered when the insured person wants to checkout / withdraw their credit after. When a flight is delayed, the AppContract should call creditInsurees() and credit the balance of each insuree. The insurees can checkout their insurance by calling pay() (which will make their balance = 0).
+fund() from what I understood, this is called when the airline company has registered and wishes to pay the 10 ether fee to participate in the voting process.
+Overall, be careful as ALL the DataContract functions are only callable by the AppContract (apart from the pause /resume contract which can be done by the owner or by the appcontract ..depending on your implementation). Basically the data contract is/should be like a database with get/set/update/delete and limited access logic.
+
