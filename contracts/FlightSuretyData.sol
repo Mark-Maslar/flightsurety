@@ -91,14 +91,6 @@ contract FlightSuretyData is Ownable {
     */    
     modifier requireAirlineIsRegistered(address newAirline)
     {
-        // if(desiredState == true){
-        //     require(airlines[msg.sender].airlineAddress != address(0), "Airline is not registered"); 
-        // }
-        // else
-        // {
-        //     require(airlines[msg.sender].airlineAddress == address(0), "Airline is already registered");
-        // }
-        // _;
         require(airlines[newAirline].isRegistered == true, "Airline is not registered");
         _;        
     }
@@ -109,7 +101,7 @@ contract FlightSuretyData is Ownable {
 
     modifier requireAirlineIsFunded(address airline)
     {
-        // require(airlines[airline].balance >= 10, "Airline is not sufficiently funded."); 
+        //require(airlines[airline].balance >= 10, "Airline is not sufficiently funded."); 
         ////require(isAirlineFunded(airline), "Airline is not sufficiently funded."); 
         _;
     }
@@ -220,8 +212,9 @@ contract FlightSuretyData is Ownable {
                             
                             returns(bool success)
     {
+                            // airlines[newairlineAddress] = Airline({airlineAddress: newairlineAddress, balance: 0, isRegistered: true, isAllowedToVote: false}); // add new airline to mapping
                             airlines[newairlineAddress] = Airline(newairlineAddress, 0, true, false); // add new airline to mapping
-                            registeredAirlines.push(newairlineAddress);               // add to array
+                            // registeredAirlines.push(newairlineAddress);               // add to array
                             emit AirlineRegistered(newairlineAddress, false);
     }
 
@@ -282,17 +275,19 @@ contract FlightSuretyData is Ownable {
                             //// requireAirlineIsRegistered(airline)
     {
         require(msg.value >= 0, "Insufficient funding value."); // Any positive funding amount is acceptable. However, a separate rule enforces a minimum initial balance.
+        
+        
         // Add msg.value to balance
         airlines[airline].balance = airlines[airline].balance.add(msg.value); //SafeMath add
+        // airline.transfer(msg.value); //// TODO causes test to fail; not funded
                 
-        //Check balance. If > 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.
+        //Check balance. If >= 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.
         if (airlines[airline].balance >= 10) {
              airlines[airline].isAllowedToVote = true;
              emit AirlineRegistered(airline, airlines[airline].isAllowedToVote);
         }
         else {
             airlines[airline].isAllowedToVote = false;
-            emit AirlineRegistered(airline, airlines[airline].isAllowedToVote); //TODO remove!
         }
     }
 

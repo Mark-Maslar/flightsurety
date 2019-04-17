@@ -47,7 +47,10 @@ function safeWithdraw(uint256 amount) external rateLimit(30 minutes) {
   it('(flight) an airline can register a flight after giving minimum funds of 10 ether', async () => {
     const contract = await FlightSuretyApp.deployed()
 await contract.addFunds({from: airline1, value: web3.utils.toWei('10', 'ether')});
+truffle migrate --reset --compile-all --network development
 
+
+truffle migrate --reset --compile-all --network development
 
 Testing: run each test file separately: 
 truffle test ./test/flightSurety.js 
