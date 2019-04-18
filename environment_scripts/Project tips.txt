@@ -1,11 +1,28 @@
 For an airline to be able to vote for registration it is required that it has ?? payed 10 ether
 For a consumer to be able to buy insurance for a flight it is required that the airline has ?? payed 10 ether
 
+
+
 the flight struct and its mapping should be in the Data contract
+
 You may find useful to have the struct, not the mapping of flights, in the App contract to organize the data of the function during its execution or if you fetch a Flight from the Data contract to get it when you call a function from the Data contract that returns a flight
 
 
 using SafeMath for uint256;
+
+Could we assume that when an airline is registering a new airline, the first one votes is yes and it doesn´t has to make another call to the App contract to vote?
+Yes that is valid
+That it is IMPORTANT to mention that in the README so that the reviewer knows about it or that can confuse the reviewer
+
+the funds in the App contract, submitted for each airline to start to operate, shall be used for thus payout to the passenger. 
+your assumptions are correct. The rubric means that the payout should be available to the passenger withdraw to their wallet instead of being transferred directly upon a flight delay
+
+It is expected that an airline is FUNDED to be able to register another airline
+besides being funded, do not forget about the multi-consensus party that should be implemented after five airlines registered on the system
+
+ "To participate, an airline should be funded with 10 ether", to whom the fund would be transferred? 
+The funds are transferred to the Data contract. 1) You first send them to the App contract and 2) then the App contract sends them to the Data contract. Contracts can own ether
+
 mapping(address => uint256) private sales;
 function safeWithdraw(uint256 amount) external {
 //Checks
@@ -26,7 +43,9 @@ git remote add origin https://github.com/Mark-Maslar/flightsurety
 git push -u origin --all
 
 git pull https://github.com/Mark-Maslar/flightsurety
-// -------------------------
+// 
+
+-------------------------
 
 
 //Rate Limiting
@@ -47,7 +66,6 @@ function safeWithdraw(uint256 amount) external rateLimit(30 minutes) {
   it('(flight) an airline can register a flight after giving minimum funds of 10 ether', async () => {
     const contract = await FlightSuretyApp.deployed()
 await contract.addFunds({from: airline1, value: web3.utils.toWei('10', 'ether')});
-truffle migrate --reset --compile-all --network development
 
 
 truffle migrate --reset --compile-all --network development

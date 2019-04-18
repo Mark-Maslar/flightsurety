@@ -272,11 +272,11 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405260018060146101000a81548160ff02191690831515021790555034801561002a57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a333600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a16111de806101bc6000396000f3006080604052600436106100d0576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e248a11146100fd578063110466ed146101585780631b9265b814610187578063230244081461019e5780632c388d5d146101d4578063715018a61461022f5780638da5cb5b146102465780638f32d59b1461029d578063a6f2ae3a146102cc578063c7ba5018146102d6578063c8820a7014610351578063cd905dff146103b6578063f2fde38b146103e5578063f53b6d6514610428575b6100fb600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610483565b005b34801561010957600080fd5b5061013e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610760565b604051808215151515815260200191505060405180910390f35b34801561016457600080fd5b506101856004803603810190808035151590602001909291905050506107fb565b005b34801561019357600080fd5b5061019c610962565b005b6101d2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610483565b005b3480156101e057600080fd5b50610215600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610964565b604051808215151515815260200191505060405180910390f35b34801561023b57600080fd5b50610244610a35565b005b34801561025257600080fd5b5061025b610b07565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102a957600080fd5b506102b2610b30565b604051808215151515815260200191505060405180910390f35b6102d4610b87565b005b3480156102e257600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b89565b604051808215151515815260200191505060405180910390f35b34801561035d57600080fd5b506103b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190820180359060200191909192939192939080359060200190929190505050611010565b005b3480156103c257600080fd5b506103cb611016565b604051808215151515815260200191505060405180910390f35b3480156103f157600080fd5b50610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061102d565b005b34801561043457600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061104c565b604051808215151515815260200191505060405180910390f35b600034101515156104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f496e73756666696369656e742066756e64696e672076616c75652e000000000081525060200191505060405180910390fd5b61055134600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015461109c90919063ffffffff16565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010181905550600a600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154101515610701576001600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f81600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160019054906101000a900460ff16604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a161075d565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055505b50565b60008073ffffffffffffffffffffffffffffffffffffffff16600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614159050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108c0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b7f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a180600160146101000a81548160ff02191690831515021790555050565b565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a160019050919050565b610a3d610b30565b1515610a4857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b565b6000600160149054906101000a900460ff161515610c35576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260011515600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160009054906101000a900460ff16151514151515610d02576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601d8152602001807f4169726c696e6520697320616c7265616479207265676973746572656400000081525060200191505060405180910390fd5b3360046003805490501015610e8657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151515610e85576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260418152602001807f43757272656e746c792c206f6e6c792072656769737465726564206169726c6981526020017f6e65732063616e20726567697374657220616e6f74686572206169726c696e6581526020017f2e0000000000000000000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b5b6080604051908101604052808673ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160011515815260200160001515815250600260008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f856000604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a1505092915050565b50505050565b6000600160149054906101000a900460ff16905090565b611035610b30565b151561104057600080fd5b611049816110b8565b50565b6000600a600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015410159050919050565b600081830190508281101515156110af57fe5b80905092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156110f457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820438e1137a64bb244e104f4ffa1673941ecfa7aad83956bde2c66aa664bfd06a50029",
-  "deployedBytecode": "0x6080604052600436106100d0576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e248a11146100fd578063110466ed146101585780631b9265b814610187578063230244081461019e5780632c388d5d146101d4578063715018a61461022f5780638da5cb5b146102465780638f32d59b1461029d578063a6f2ae3a146102cc578063c7ba5018146102d6578063c8820a7014610351578063cd905dff146103b6578063f2fde38b146103e5578063f53b6d6514610428575b6100fb600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610483565b005b34801561010957600080fd5b5061013e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610760565b604051808215151515815260200191505060405180910390f35b34801561016457600080fd5b506101856004803603810190808035151590602001909291905050506107fb565b005b34801561019357600080fd5b5061019c610962565b005b6101d2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610483565b005b3480156101e057600080fd5b50610215600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610964565b604051808215151515815260200191505060405180910390f35b34801561023b57600080fd5b50610244610a35565b005b34801561025257600080fd5b5061025b610b07565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102a957600080fd5b506102b2610b30565b604051808215151515815260200191505060405180910390f35b6102d4610b87565b005b3480156102e257600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b89565b604051808215151515815260200191505060405180910390f35b34801561035d57600080fd5b506103b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190820180359060200191909192939192939080359060200190929190505050611010565b005b3480156103c257600080fd5b506103cb611016565b604051808215151515815260200191505060405180910390f35b3480156103f157600080fd5b50610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061102d565b005b34801561043457600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061104c565b604051808215151515815260200191505060405180910390f35b600034101515156104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f496e73756666696369656e742066756e64696e672076616c75652e000000000081525060200191505060405180910390fd5b61055134600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015461109c90919063ffffffff16565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010181905550600a600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154101515610701576001600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f81600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160019054906101000a900460ff16604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a161075d565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055505b50565b60008073ffffffffffffffffffffffffffffffffffffffff16600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614159050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108c0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b7f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a180600160146101000a81548160ff02191690831515021790555050565b565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a160019050919050565b610a3d610b30565b1515610a4857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b565b6000600160149054906101000a900460ff161515610c35576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260011515600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160009054906101000a900460ff16151514151515610d02576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601d8152602001807f4169726c696e6520697320616c7265616479207265676973746572656400000081525060200191505060405180910390fd5b3360046003805490501015610e8657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151515610e85576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260418152602001807f43757272656e746c792c206f6e6c792072656769737465726564206169726c6981526020017f6e65732063616e20726567697374657220616e6f74686572206169726c696e6581526020017f2e0000000000000000000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b5b6080604051908101604052808673ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160011515815260200160001515815250600260008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f856000604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a1505092915050565b50505050565b6000600160149054906101000a900460ff16905090565b611035610b30565b151561104057600080fd5b611049816110b8565b50565b6000600a600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015410159050919050565b600081830190508281101515156110af57fe5b80905092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156110f457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820438e1137a64bb244e104f4ffa1673941ecfa7aad83956bde2c66aa664bfd06a50029",
-  "sourceMap": "127:11096:1:-;;;635:4;608:31;;;;;;;;;;;;;;;;;;;;1706:210;8:9:-1;5:2;;;30:1;27;20:12;5:2;1706:210:1;313:10:3;301:9;;:22;;;;;;;;;;;;;;;;;;368:9;;;;;;;;;;;338:40;;364:1;338:40;;;;;;;;;;;;1856:10:1;1840:13;;:26;;;;;;;;;;;;;;;;;;1881:28;1895:13;;;;;;;;;;;1881:28;;;;;;;;;;;;;;;;;;;;;;127:11096;;;;;;",
-  "deployedSourceMap": "127:11096:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11193:19;11198:13;;;;;;;;;;;11193:4;:19::i;:::-;127:11096;5236:234;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5236:234:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6114:481;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6114:481:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;9046:154;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9046:154:1;;;;;;9399:1041;;;;;;;;;;;;;;;;;;;;;;;;;;;;4909:244;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4909:244:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;850:140:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;850:140:3;;;;;;432:80;;8:9:-1;5:2;;;30:1;27;20:12;5:2;432:80:3;;;;;;;;;;;;;;;;;;;;;;;;;;;704:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;704:93:3;;;;;;;;;;;;;;;;;;;;;;;;;;;8372:187:1;;;;;;7146:1158;;8:9:-1;5:2;;;30:1;27;20:12;5:2;7146:1158:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8621:336;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8621:336:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5767:178;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5767:178:1;;;;;;;;;;;;;;;;;;;;;;;;;;;1051:107:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1051:107:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;5476:155:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5476:155:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9399:1041;9700:1;9687:9;:14;;9679:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9932:40;9962:9;9932:8;:17;9941:7;9932:17;;;;;;;;;;;;;;;:25;;;:29;;:40;;;;:::i;:::-;9904:8;:17;9913:7;9904:17;;;;;;;;;;;;;;;:25;;:68;;;;10203:2;10174:8;:17;10183:7;10174:17;;;;;;;;;;;;;;;:25;;;:31;;10170:264;;;10258:4;10222:8;:17;10231:7;10222:17;;;;;;;;;;;;;;;:33;;;:40;;;;;;;;;;;;;;;;;;10282:61;10300:7;10309:8;:17;10318:7;10309:17;;;;;;;;;;;;;;;:33;;;;;;;;;;;;10282:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10170:264;;;10418:5;10382:8;:17;10391:7;10382:17;;;;;;;;;;;;;;;:33;;;:41;;;;;;;;;;;;;;;;;;10170:264;9399:1041;:::o;5236:234::-;5383:4;5460:1;5412:50;;:8;:21;5421:11;5412:21;;;;;;;;;;;;;;;:36;;;;;;;;;;;;:50;;;;5404:59;;5236:234;;;:::o;6114:481::-;3231:13;;;;;;;;;;;3217:27;;:10;:27;;;3209:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6532:28;6546:13;;;;;;;;;;;6532:28;;;;;;;;;;;;;;;;;;;;;;6584:4;6570:11;;:18;;;;;;;;;;;;;;;;;;6114:481;:::o;9046:154::-;:::o;4909:244::-;5031:4;5068:14;5052:13;;:30;;;;;;;;;;;;;;;;;;5097:28;5111:13;;;;;;;;;;;5097:28;;;;;;;;;;;;;;;;;;;;;;5142:4;5135:11;;4909:244;;;:::o;850:140:3:-;604:9;:7;:9::i;:::-;596:18;;;;;;;;948:1;911:40;;929:9;;;;;;;;;;;911:40;;;;;;;;;;;;981:1;961:9;;:22;;;;;;;;;;;;;;;;;;850:140::o;432:80::-;470:7;496:9;;;;;;;;;;;489:16;;432:80;:::o;704:93::-;744:4;781:9;;;;;;;;;;;767:23;;:10;:23;;;760:30;;704:93;:::o;8372:187:1:-;:::o;7146:1158::-;7771:12;2664:11;;;;;;;;;;;2656:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7566:17;3417:4;3380:41;;:8;:20;3389:10;3380:20;;;;;;;;;;;;;;;:33;;;;;;;;;;;;:41;;;;3372:83;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7636:10;4344:1;4316:18;:25;;;;:29;4313:198;;;4416:13;;;;;;;;;;;4377:52;;:8;:20;4386:10;4377:20;;;;;;;;;;;;;;;:35;;;;;;;;;;;;:52;;;;4369:130;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4313:198;8042:42;;;;;;;;;8050:17;8042:42;;;;;;8069:1;8042:42;;;;8072:4;8042:42;;;;;;8078:5;8042:42;;;;;8012:8;:27;8021:17;8012:27;;;;;;;;;;;;;;;:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8254:43;8272:17;8291:5;8254:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3465:1;2727;7146:1158;;;;:::o;8621:336::-;;;;;:::o;5767:178::-;5899:4;5927:11;;;;;;;;;;;5920:18;;5767:178;:::o;1051:107:3:-;604:9;:7;:9::i;:::-;596:18;;;;;;;;1123:28;1142:8;1123:18;:28::i;:::-;1051:107;:::o;5476:155:1:-;5544:4;5617:2;5588:8;:17;5597:7;5588:17;;;;;;;;;;;;;;;:25;;;:31;;5580:40;;5476:155;;;:::o;1238:128:4:-;1298:9;1324:2;1319;:7;1315:11;;1344:2;1339:1;:7;;1332:15;;;;;;1360:1;1353:8;;1238:128;;;;:::o;1222:186:3:-;1315:1;1295:22;;:8;:22;;;;1287:31;;;;;;;;1362:8;1333:38;;1351:9;;;;;;;;;;;1333:38;;;;;;;;;;;;1393:8;1381:9;;:20;;;;;;;;;;;;;;;;;;1222:186;:::o",
-  "source": "pragma solidity ^0.4.25;\n\nimport \"../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\";\nimport \"./Ownable.sol\";\n\ncontract FlightSuretyData is Ownable {\n    using SafeMath for uint256;\n\n    /********************************************************************************************/\n    /*                                       DATA VARIABLES                                     */\n    /********************************************************************************************/\n\n    address private contractOwner;                                      // Account used to deploy contract\n    bool private operational = true;                                    // Blocks all state changes throughout the contract if false\n    \n    struct Airline {\n        address airlineAddress;\n        uint256 balance;\n        bool isRegistered;\n        bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. \n    }    \n    mapping(address => Airline) private airlines;\n    address[] private registeredAirlines; // Makes it easier to obtain airline count\n\n    /********************************************************************************************/\n    /*                                       EVENT DEFINITIONS                                  */\n    /********************************************************************************************/\n\n    event ContractOwner(address contractOwner);\n\n    // Event fired when an airline is registered\n    // Other airlines watch this and validate the airline\n    event AirlineRegistered(address airlineAddress, bool isAllowedToVote);\n\n\n    /**\n    * @dev Constructor\n    *      The deploying account becomes contractOwner\n    */\n    constructor\n                                (\n                                ) \n                                public\n    {\n        contractOwner = msg.sender;\n        emit ContractOwner(contractOwner);\n    }\n\n    /********************************************************************************************/\n    /*                                       FUNCTION MODIFIERS                                 */\n    /********************************************************************************************/\n\n    // Modifiers help avoid duplication of code. They are typically used to validate something\n    // before a function is allowed to be executed.\n\n    /**\n    * @dev Modifier that requires the \"operational\" boolean variable to be \"true\"\n    *      This is used on all state changing functions to pause the contract in \n    *      the event there is an issue that needs to be fixed\n    */\n    modifier requireIsOperational() \n    {\n        require(operational, \"Contract is currently not operational\");\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\n    }\n\n    modifier requireIsNotOperational() \n    {\n        require(!operational, \"Only supported if contract is not operational\");\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\n    }\n\n\n    /**\n    * @dev Modifier that requires the \"ContractOwner\" account to be the function caller\n    */\n    modifier requireContractOwner()\n    {\n        require(msg.sender == contractOwner, \"Caller is not contract owner\");\n        _;\n    }\n\n    modifier requireNotAlreadyRegistered(address newAirline)\n    {\n        require(airlines[newAirline].isRegistered != true, \"Airline is already registered\");\n        _;\n    }\n\n    /**\n    * @dev Modifier that requires the Airline to be registered\n    */    \n    modifier requireAirlineIsRegistered(address newAirline)\n    {\n        require(airlines[newAirline].isRegistered == true, \"Airline is not registered\");\n        _;        \n    }\n\n    /**\n    * @dev Only existing airline may register a new airline until there are at least four airlines registered.\n    */    \n\n    modifier requireAirlineIsFunded(address airline)\n    {\n        //require(airlines[airline].balance >= 10, \"Airline is not sufficiently funded.\"); \n        ////require(isAirlineFunded(airline), \"Airline is not sufficiently funded.\"); \n        _;\n    }\n\n    /**\n    * @dev Only existing airline may register a new airline until there are at least four airlines registered.\n    */    \n\n    modifier requireFirstFourRestriction()\n    {\n        if(registeredAirlines.length < 4)\n        {\n            require(airlines[msg.sender].airlineAddress != contractOwner, \"Currently, only registered airlines can register another airline.\"); \n        }\n        _;\n    }\n\n    /********************************************************************************************/\n    /*                                       UTILITY FUNCTIONS                                  */\n    /********************************************************************************************/\n    /**\n    * @dev Is the addressed mapped to an airline?\n    *\n    */   \n   \n    function authorizeCaller(address _callerAddress) \n                            public \n                            returns(bool)\n\n    {\n        contractOwner = _callerAddress;\n        emit ContractOwner(contractOwner);\n        return true;\n    }\n\n    /**\n    * @dev Is the addressed mapped to an airline?\n    *\n    */      \n    function isAirline(address someAddress) \n                            public \n                            view \n                            returns(bool) \n    {\n        return (airlines[someAddress].airlineAddress != address(0));\n    }\n\n    function isAirlineFunded(address airline) external \n        returns(bool)        \n        {\n            return (airlines[airline].balance >= 10);\n        }\n\n\n    /**\n    * @dev Get operating status of contract\n    *\n    * @return A bool that is the current operating status\n    */      \n    function isOperational() \n                            public \n                            view \n                            returns(bool) \n    {\n        return operational;\n    }\n\n\n    /**\n    * @dev Sets contract operations on/off\n    *\n    * When operational mode is disabled, all write transactions except for this one will fail\n    */    \n    function setOperatingStatus\n                            (\n                                bool mode\n                            ) \n                            external\n                            requireContractOwner()\n                            // requireIsNotOperational() // This function kills the contract, and it stays killed.\n                            ////requireAirlineIsRegistered(true)\n    {\n        emit ContractOwner(contractOwner);\n        operational = mode;\n    }\n\n    /********************************************************************************************/\n    /*                                     SMART CONTRACT FUNCTIONS                             */\n    /********************************************************************************************/\n\n   /**\n    * @dev Add an airline to the registration queue\n    *      Can only be called from FlightSuretyApp contract.\n    *      Only existing airline may register a new airline until there are at least four airlines registered.\n    *\n    */   \n    function registerAirline\n                            (address newairlineAddress,\n                            address originSender\n                            )\n                            external\n\n                            requireIsOperational()\n                            //requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered\n                            requireNotAlreadyRegistered(newairlineAddress)\n                            requireAirlineIsFunded(msg.sender)\n                            requireFirstFourRestriction()\n                            \n                            returns(bool success)\n    {\n                            // airlines[newairlineAddress] = Airline({airlineAddress: newairlineAddress, balance: 0, isRegistered: true, isAllowedToVote: false}); // add new airline to mapping\n                            airlines[newairlineAddress] = Airline(newairlineAddress, 0, true, false); // add new airline to mapping\n                            // registeredAirlines.push(newairlineAddress);               // add to array\n                            emit AirlineRegistered(newairlineAddress, false);\n    }\n\n\n   /**\n    * @dev Buy insurance for a flight\n    *\n    */   \n    function buy\n                            (                             \n                            )\n                            external\n                            payable\n    {\n\n    }\n\n    /**\n     *  @dev Credits payouts to insurees\n    */\n    function creditInsurees\n                                ( \n                                    address airline,\n                                    string flight,\n                                    uint256 timestamp\n                                )\n                                external\n    {\n\n        // TODO Process refunds\n    }\n    \n\n    /**\n     *  @dev Transfers eligible payout funds to insuree\n     *\n    */\n    function pay\n                            (\n                            )\n                            external\n                            pure\n    {\n    }\n\n   /**\n    * @dev Initial funding for the insurance. Unless there are too many delayed flights\n    *      resulting in insurance payouts, the contract should be self-sustaining\n    *\n    */   \n    function fund\n                            (   \n                                address airline\n                            )\n                            public\n                            payable\n\n                            //// requireAirlineIsRegistered(airline)\n    {\n        require(msg.value >= 0, \"Insufficient funding value.\"); // Any positive funding amount is acceptable. However, a separate rule enforces a minimum initial balance.\n        \n        \n        // Add msg.value to balance\n        airlines[airline].balance = airlines[airline].balance.add(msg.value); //SafeMath add\n        // airline.transfer(msg.value);\n                \n        //Check balance. If >= 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.\n        if (airlines[airline].balance >= 10) {\n             airlines[airline].isAllowedToVote = true;\n             emit AirlineRegistered(airline, airlines[airline].isAllowedToVote);\n        }\n        else {\n            airlines[airline].isAllowedToVote = false;\n        }\n    }\n\n    function getFlightKey\n                        (\n                            address airline,\n                            string memory flight,\n                            //string flight,\n                            uint256 timestamp\n                        )\n                        pure\n                        internal\n                        returns(bytes32) \n    {\n        return keccak256(abi.encodePacked(airline, flight, timestamp));\n    }\n\n    /**\n    * @dev Fallback function for funding smart contract.\n    *      \"Fallback functions are also executed whenever a contract would receive plain Ether, without any data.\"\n    *\n    */\n    function() \n                            external \n                            payable \n    {\n        fund(contractOwner);\n    }\n\n\n}\n",
+  "bytecode": "0x608060405260018060146101000a81548160ff02191690831515021790555034801561002a57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600073ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a333600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a16111de806101bc6000396000f3006080604052600436106100d0576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e248a11146100fd578063110466ed146101585780631b9265b814610187578063230244081461019e5780632c388d5d146101d4578063715018a61461022f5780638da5cb5b146102465780638f32d59b1461029d578063a6f2ae3a146102cc578063c7ba5018146102d6578063c8820a7014610351578063cd905dff146103b6578063f2fde38b146103e5578063f53b6d6514610428575b6100fb600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610483565b005b34801561010957600080fd5b5061013e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610760565b604051808215151515815260200191505060405180910390f35b34801561016457600080fd5b506101856004803603810190808035151590602001909291905050506107fb565b005b34801561019357600080fd5b5061019c610962565b005b6101d2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610483565b005b3480156101e057600080fd5b50610215600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610964565b604051808215151515815260200191505060405180910390f35b34801561023b57600080fd5b50610244610a35565b005b34801561025257600080fd5b5061025b610b07565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102a957600080fd5b506102b2610b30565b604051808215151515815260200191505060405180910390f35b6102d4610b87565b005b3480156102e257600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b89565b604051808215151515815260200191505060405180910390f35b34801561035d57600080fd5b506103b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190820180359060200191909192939192939080359060200190929190505050611010565b005b3480156103c257600080fd5b506103cb611016565b604051808215151515815260200191505060405180910390f35b3480156103f157600080fd5b50610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061102d565b005b34801561043457600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061104c565b604051808215151515815260200191505060405180910390f35b600034101515156104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f496e73756666696369656e742066756e64696e672076616c75652e000000000081525060200191505060405180910390fd5b61055134600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015461109c90919063ffffffff16565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010181905550600a600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154101515610701576001600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f81600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160019054906101000a900460ff16604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a161075d565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055505b50565b60008073ffffffffffffffffffffffffffffffffffffffff16600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614159050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108c0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b7f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a180600160146101000a81548160ff02191690831515021790555050565b565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a160019050919050565b610a3d610b30565b1515610a4857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b565b6000600160149054906101000a900460ff161515610c35576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260011515600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160009054906101000a900460ff16151514151515610d02576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601d8152602001807f4169726c696e6520697320616c7265616479207265676973746572656400000081525060200191505060405180910390fd5b3360046003805490501015610e8657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151515610e85576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260418152602001807f43757272656e746c792c206f6e6c792072656769737465726564206169726c6981526020017f6e65732063616e20726567697374657220616e6f74686572206169726c696e6581526020017f2e0000000000000000000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b5b6080604051908101604052808673ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160011515815260200160001515815250600260008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f856000604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a1505092915050565b50505050565b6000600160149054906101000a900460ff16905090565b611035610b30565b151561104057600080fd5b611049816110b8565b50565b6000600a600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015410159050919050565b600081830190508281101515156110af57fe5b80905092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156110f457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820fb3a361ec5d7706d4365d65941fc7da7568047c5fff15cead0f5206bd62ad2390029",
+  "deployedBytecode": "0x6080604052600436106100d0576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630e248a11146100fd578063110466ed146101585780631b9265b814610187578063230244081461019e5780632c388d5d146101d4578063715018a61461022f5780638da5cb5b146102465780638f32d59b1461029d578063a6f2ae3a146102cc578063c7ba5018146102d6578063c8820a7014610351578063cd905dff146103b6578063f2fde38b146103e5578063f53b6d6514610428575b6100fb600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16610483565b005b34801561010957600080fd5b5061013e600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610760565b604051808215151515815260200191505060405180910390f35b34801561016457600080fd5b506101856004803603810190808035151590602001909291905050506107fb565b005b34801561019357600080fd5b5061019c610962565b005b6101d2600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610483565b005b3480156101e057600080fd5b50610215600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610964565b604051808215151515815260200191505060405180910390f35b34801561023b57600080fd5b50610244610a35565b005b34801561025257600080fd5b5061025b610b07565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b3480156102a957600080fd5b506102b2610b30565b604051808215151515815260200191505060405180910390f35b6102d4610b87565b005b3480156102e257600080fd5b50610337600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610b89565b604051808215151515815260200191505060405180910390f35b34801561035d57600080fd5b506103b4600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190820180359060200191909192939192939080359060200190929190505050611010565b005b3480156103c257600080fd5b506103cb611016565b604051808215151515815260200191505060405180910390f35b3480156103f157600080fd5b50610426600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061102d565b005b34801561043457600080fd5b50610469600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061104c565b604051808215151515815260200191505060405180910390f35b600034101515156104fc576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f496e73756666696369656e742066756e64696e672076616c75652e000000000081525060200191505060405180910390fd5b61055134600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015461109c90919063ffffffff16565b600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010181905550600a600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060010154101515610701576001600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f81600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160019054906101000a900460ff16604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a161075d565b6000600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160016101000a81548160ff0219169083151502179055505b50565b60008073ffffffffffffffffffffffffffffffffffffffff16600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614159050919050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161415156108c0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f43616c6c6572206973206e6f7420636f6e7472616374206f776e65720000000081525060200191505060405180910390fd5b7f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a180600160146101000a81548160ff02191690831515021790555050565b565b600081600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f14e49bb617cc28a6c641502ed18662c4a046da1b3bb5e3e44761f7257fbe6ab4600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a160019050919050565b610a3d610b30565b1515610a4857600080fd5b600073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a360008060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614905090565b565b6000600160149054906101000a900460ff161515610c35576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260258152602001807f436f6e74726163742069732063757272656e746c79206e6f74206f706572617481526020017f696f6e616c00000000000000000000000000000000000000000000000000000081525060400191505060405180910390fd5b8260011515600260008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060020160009054906101000a900460ff16151514151515610d02576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601d8152602001807f4169726c696e6520697320616c7265616479207265676973746572656400000081525060200191505060405180910390fd5b3360046003805490501015610e8657600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1614151515610e85576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260418152602001807f43757272656e746c792c206f6e6c792072656769737465726564206169726c6981526020017f6e65732063616e20726567697374657220616e6f74686572206169726c696e6581526020017f2e0000000000000000000000000000000000000000000000000000000000000081525060600191505060405180910390fd5b5b6080604051908101604052808673ffffffffffffffffffffffffffffffffffffffff1681526020016000815260200160011515815260200160001515815250600260008773ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020160006101000a81548160ff02191690831515021790555060608201518160020160016101000a81548160ff0219169083151502179055509050507f945c2c1176ed60fe5298a362ff65c5e71605de3b0be83177e24414cf14d7f21f856000604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001821515151581526020019250505060405180910390a1505092915050565b50505050565b6000600160149054906101000a900460ff16905090565b611035610b30565b151561104057600080fd5b611049816110b8565b50565b6000600a600260008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206001015410159050919050565b600081830190508281101515156110af57fe5b80905092915050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156110f457600080fd5b8073ffffffffffffffffffffffffffffffffffffffff166000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff167f5c486528ec3e3f0ea91181cff8116f02bfa350e03b8b6f12e00765adbb5af85c60405160405180910390a3806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505600a165627a7a72305820fb3a361ec5d7706d4365d65941fc7da7568047c5fff15cead0f5206bd62ad2390029",
+  "sourceMap": "127:11206:1:-;;;635:4;608:31;;;;;;;;;;;;;;;;;;;;1706:210;8:9:-1;5:2;;;30:1;27;20:12;5:2;1706:210:1;313:10:3;301:9;;:22;;;;;;;;;;;;;;;;;;368:9;;;;;;;;;;;338:40;;364:1;338:40;;;;;;;;;;;;1856:10:1;1840:13;;:26;;;;;;;;;;;;;;;;;;1881:28;1895:13;;;;;;;;;;;1881:28;;;;;;;;;;;;;;;;;;;;;;127:11206;;;;;;",
+  "deployedSourceMap": "127:11206:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;11303:19;11308:13;;;;;;;;;;;11303:4;:19::i;:::-;127:11206;5236:234;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5236:234:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6114:481;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6114:481:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;9046:154;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9046:154:1;;;;;;9399:1151;;;;;;;;;;;;;;;;;;;;;;;;;;;;4909:244;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4909:244:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;850:140:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;850:140:3;;;;;;432:80;;8:9:-1;5:2;;;30:1;27;20:12;5:2;432:80:3;;;;;;;;;;;;;;;;;;;;;;;;;;;704:93;;8:9:-1;5:2;;;30:1;27;20:12;5:2;704:93:3;;;;;;;;;;;;;;;;;;;;;;;;;;;8372:187:1;;;;;;7146:1158;;8:9:-1;5:2;;;30:1;27;20:12;5:2;7146:1158:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8621:336;;8:9:-1;5:2;;;30:1;27;20:12;5:2;8621:336:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5767:178;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5767:178:1;;;;;;;;;;;;;;;;;;;;;;;;;;;1051:107:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1051:107:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;5476:155:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5476:155:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9399:1151;9702:1;9689:9;:14;;9681:54;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9934:40;9964:9;9934:8;:17;9943:7;9934:17;;;;;;;;;;;;;;;:25;;;:29;;:40;;;;:::i;:::-;9906:8;:17;9915:7;9906:17;;;;;;;;;;;;;;;:25;;:68;;;;10313:2;10284:8;:17;10293:7;10284:17;;;;;;;;;;;;;;;:25;;;:31;;10280:264;;;10368:4;10332:8;:17;10341:7;10332:17;;;;;;;;;;;;;;;:33;;;:40;;;;;;;;;;;;;;;;;;10392:61;10410:7;10419:8;:17;10428:7;10419:17;;;;;;;;;;;;;;;:33;;;;;;;;;;;;10392:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10280:264;;;10528:5;10492:8;:17;10501:7;10492:17;;;;;;;;;;;;;;;:33;;;:41;;;;;;;;;;;;;;;;;;10280:264;9399:1151;:::o;5236:234::-;5383:4;5460:1;5412:50;;:8;:21;5421:11;5412:21;;;;;;;;;;;;;;;:36;;;;;;;;;;;;:50;;;;5404:59;;5236:234;;;:::o;6114:481::-;3231:13;;;;;;;;;;;3217:27;;:10;:27;;;3209:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6532:28;6546:13;;;;;;;;;;;6532:28;;;;;;;;;;;;;;;;;;;;;;6584:4;6570:11;;:18;;;;;;;;;;;;;;;;;;6114:481;:::o;9046:154::-;:::o;4909:244::-;5031:4;5068:14;5052:13;;:30;;;;;;;;;;;;;;;;;;5097:28;5111:13;;;;;;;;;;;5097:28;;;;;;;;;;;;;;;;;;;;;;5142:4;5135:11;;4909:244;;;:::o;850:140:3:-;604:9;:7;:9::i;:::-;596:18;;;;;;;;948:1;911:40;;929:9;;;;;;;;;;;911:40;;;;;;;;;;;;981:1;961:9;;:22;;;;;;;;;;;;;;;;;;850:140::o;432:80::-;470:7;496:9;;;;;;;;;;;489:16;;432:80;:::o;704:93::-;744:4;781:9;;;;;;;;;;;767:23;;:10;:23;;;760:30;;704:93;:::o;8372:187:1:-;:::o;7146:1158::-;7771:12;2664:11;;;;;;;;;;;2656:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7566:17;3417:4;3380:41;;:8;:20;3389:10;3380:20;;;;;;;;;;;;;;;:33;;;;;;;;;;;;:41;;;;3372:83;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7636:10;4344:1;4316:18;:25;;;;:29;4313:198;;;4416:13;;;;;;;;;;;4377:52;;:8;:20;4386:10;4377:20;;;;;;;;;;;;;;;:35;;;;;;;;;;;;:52;;;;4369:130;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4313:198;8042:42;;;;;;;;;8050:17;8042:42;;;;;;8069:1;8042:42;;;;8072:4;8042:42;;;;;;8078:5;8042:42;;;;;8012:8;:27;8021:17;8012:27;;;;;;;;;;;;;;;:72;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8254:43;8272:17;8291:5;8254:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3465:1;2727;7146:1158;;;;:::o;8621:336::-;;;;;:::o;5767:178::-;5899:4;5927:11;;;;;;;;;;;5920:18;;5767:178;:::o;1051:107:3:-;604:9;:7;:9::i;:::-;596:18;;;;;;;;1123:28;1142:8;1123:18;:28::i;:::-;1051:107;:::o;5476:155:1:-;5544:4;5617:2;5588:8;:17;5597:7;5588:17;;;;;;;;;;;;;;;:25;;;:31;;5580:40;;5476:155;;;:::o;1238:128:4:-;1298:9;1324:2;1319;:7;1315:11;;1344:2;1339:1;:7;;1332:15;;;;;;1360:1;1353:8;;1238:128;;;;:::o;1222:186:3:-;1315:1;1295:22;;:8;:22;;;;1287:31;;;;;;;;1362:8;1333:38;;1351:9;;;;;;;;;;;1333:38;;;;;;;;;;;;1393:8;1381:9;;:20;;;;;;;;;;;;;;;;;;1222:186;:::o",
+  "source": "pragma solidity ^0.4.25;\n\nimport \"../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol\";\nimport \"./Ownable.sol\";\n\ncontract FlightSuretyData is Ownable {\n    using SafeMath for uint256;\n\n    /********************************************************************************************/\n    /*                                       DATA VARIABLES                                     */\n    /********************************************************************************************/\n\n    address private contractOwner;                                      // Account used to deploy contract\n    bool private operational = true;                                    // Blocks all state changes throughout the contract if false\n    \n    struct Airline {\n        address airlineAddress;\n        uint256 balance;\n        bool isRegistered;\n        bool isAllowedToVote; // Airline may not vote until it has funded 10 Ether. \n    }    \n    mapping(address => Airline) private airlines;\n    address[] private registeredAirlines; // Makes it easier to obtain airline count\n\n    /********************************************************************************************/\n    /*                                       EVENT DEFINITIONS                                  */\n    /********************************************************************************************/\n\n    event ContractOwner(address contractOwner);\n\n    // Event fired when an airline is registered\n    // Other airlines watch this and validate the airline\n    event AirlineRegistered(address airlineAddress, bool isAllowedToVote);\n\n\n    /**\n    * @dev Constructor\n    *      The deploying account becomes contractOwner\n    */\n    constructor\n                                (\n                                ) \n                                public\n    {\n        contractOwner = msg.sender;\n        emit ContractOwner(contractOwner);\n    }\n\n    /********************************************************************************************/\n    /*                                       FUNCTION MODIFIERS                                 */\n    /********************************************************************************************/\n\n    // Modifiers help avoid duplication of code. They are typically used to validate something\n    // before a function is allowed to be executed.\n\n    /**\n    * @dev Modifier that requires the \"operational\" boolean variable to be \"true\"\n    *      This is used on all state changing functions to pause the contract in \n    *      the event there is an issue that needs to be fixed\n    */\n    modifier requireIsOperational() \n    {\n        require(operational, \"Contract is currently not operational\");\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\n    }\n\n    modifier requireIsNotOperational() \n    {\n        require(!operational, \"Only supported if contract is not operational\");\n        _;  // All modifiers require an \"_\" which indicates where the function body will be added\n    }\n\n\n    /**\n    * @dev Modifier that requires the \"ContractOwner\" account to be the function caller\n    */\n    modifier requireContractOwner()\n    {\n        require(msg.sender == contractOwner, \"Caller is not contract owner\");\n        _;\n    }\n\n    modifier requireNotAlreadyRegistered(address newAirline)\n    {\n        require(airlines[newAirline].isRegistered != true, \"Airline is already registered\");\n        _;\n    }\n\n    /**\n    * @dev Modifier that requires the Airline to be registered\n    */    \n    modifier requireAirlineIsRegistered(address newAirline)\n    {\n        require(airlines[newAirline].isRegistered == true, \"Airline is not registered\");\n        _;        \n    }\n\n    /**\n    * @dev Only existing airline may register a new airline until there are at least four airlines registered.\n    */    \n\n    modifier requireAirlineIsFunded(address airline)\n    {\n        //require(airlines[airline].balance >= 10, \"Airline is not sufficiently funded.\"); \n        ////require(isAirlineFunded(airline), \"Airline is not sufficiently funded.\"); \n        _;\n    }\n\n    /**\n    * @dev Only existing airline may register a new airline until there are at least four airlines registered.\n    */    \n\n    modifier requireFirstFourRestriction()\n    {\n        if(registeredAirlines.length < 4)\n        {\n            require(airlines[msg.sender].airlineAddress != contractOwner, \"Currently, only registered airlines can register another airline.\"); \n        }\n        _;\n    }\n\n    /********************************************************************************************/\n    /*                                       UTILITY FUNCTIONS                                  */\n    /********************************************************************************************/\n    /**\n    * @dev Is the addressed mapped to an airline?\n    *\n    */   \n   \n    function authorizeCaller(address _callerAddress) \n                            public \n                            returns(bool)\n\n    {\n        contractOwner = _callerAddress;\n        emit ContractOwner(contractOwner);\n        return true;\n    }\n\n    /**\n    * @dev Is the addressed mapped to an airline?\n    *\n    */      \n    function isAirline(address someAddress) \n                            public \n                            view \n                            returns(bool) \n    {\n        return (airlines[someAddress].airlineAddress != address(0));\n    }\n\n    function isAirlineFunded(address airline) external \n        returns(bool)        \n        {\n            return (airlines[airline].balance >= 10);\n        }\n\n\n    /**\n    * @dev Get operating status of contract\n    *\n    * @return A bool that is the current operating status\n    */      \n    function isOperational() \n                            public \n                            view \n                            returns(bool) \n    {\n        return operational;\n    }\n\n\n    /**\n    * @dev Sets contract operations on/off\n    *\n    * When operational mode is disabled, all write transactions except for this one will fail\n    */    \n    function setOperatingStatus\n                            (\n                                bool mode\n                            ) \n                            external\n                            requireContractOwner()\n                            // requireIsNotOperational() // This function kills the contract, and it stays killed.\n                            ////requireAirlineIsRegistered(true)\n    {\n        emit ContractOwner(contractOwner);\n        operational = mode;\n    }\n\n    /********************************************************************************************/\n    /*                                     SMART CONTRACT FUNCTIONS                             */\n    /********************************************************************************************/\n\n   /**\n    * @dev Add an airline to the registration queue\n    *      Can only be called from FlightSuretyApp contract.\n    *      Only existing airline may register a new airline until there are at least four airlines registered.\n    *\n    */   \n    function registerAirline\n                            (address newairlineAddress,\n                            address originSender\n                            )\n                            external\n\n                            requireIsOperational()\n                            //requireAirlineIsRegistered(false) //Ensure that the airline isn't already registered\n                            requireNotAlreadyRegistered(newairlineAddress)\n                            requireAirlineIsFunded(msg.sender)\n                            requireFirstFourRestriction()\n                            \n                            returns(bool success)\n    {\n                            // airlines[newairlineAddress] = Airline({airlineAddress: newairlineAddress, balance: 0, isRegistered: true, isAllowedToVote: false}); // add new airline to mapping\n                            airlines[newairlineAddress] = Airline(newairlineAddress, 0, true, false); // add new airline to mapping\n                            // registeredAirlines.push(newairlineAddress);               // add to array\n                            emit AirlineRegistered(newairlineAddress, false);\n    }\n\n\n   /**\n    * @dev Buy insurance for a flight\n    *\n    */   \n    function buy\n                            (                             \n                            )\n                            external\n                            payable\n    {\n\n    }\n\n    /**\n     *  @dev Credits payouts to insurees\n    */\n    function creditInsurees\n                                ( \n                                    address airline,\n                                    string flight,\n                                    uint256 timestamp\n                                )\n                                external\n    {\n\n        // TODO Process refunds\n    }\n    \n\n    /**\n     *  @dev Transfers eligible payout funds to insuree\n     *\n    */\n    function pay\n                            (\n                            )\n                            external\n                            pure\n    {\n    }\n\n   /**\n    * @dev Initial funding for the insurance. Unless there are too many delayed flights\n    *      resulting in insurance payouts, the contract should be self-sustaining\n    *\n    */   \n    function fund\n                            (   \n                                address airline\n                            )\n                            public\n                            payable\n\n                            //// requireAirlineIsRegistered(recipient)\n    {\n        require(msg.value >= 0, \"Insufficient funding value.\"); // Any positive funding amount is acceptable. However, a separate rule enforces a minimum initial balance.\n        \n        \n        // Add msg.value to balance\n        airlines[airline].balance = airlines[airline].balance.add(msg.value); //SafeMath add\n        // recipient.transfer(msg.value); //// TODO causes test to fail; not funded\n\n        // TODO Check whether recipient is an airline or an insuree      ????? \n        //Check balance. If >= 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.\n        if (airlines[airline].balance >= 10) {\n             airlines[airline].isAllowedToVote = true;\n             emit AirlineRegistered(airline, airlines[airline].isAllowedToVote);\n        }\n        else {\n            airlines[airline].isAllowedToVote = false;\n        }\n    }\n\n    function getFlightKey\n                        (\n                            address airline,\n                            string memory flight,\n                            //string flight,\n                            uint256 timestamp\n                        )\n                        pure\n                        internal\n                        returns(bytes32) \n    {\n        return keccak256(abi.encodePacked(airline, flight, timestamp));\n    }\n\n    /**\n    * @dev Fallback function for funding smart contract.\n    *      \"Fallback functions are also executed whenever a contract would receive plain Ether, without any data.\"\n    *\n    */\n    function() \n                            external \n                            payable \n    {\n        fund(contractOwner);\n    }\n\n\n}\n",
   "sourcePath": "C:\\Users\\Mark\\source\\repos\\GitHub\\flightsurety\\contracts\\FlightSuretyData.sol",
   "ast": {
     "absolutePath": "/C/Users/Mark/source/repos/GitHub/flightsurety/contracts/FlightSuretyData.sol",
@@ -3639,7 +3639,7 @@
             "body": {
               "id": 990,
               "nodeType": "Block",
-              "src": "9669:771:1",
+              "src": "9671:879:1",
               "statements": [
                 {
                   "expression": {
@@ -3665,7 +3665,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1296,
-                            "src": "9687:3:1",
+                            "src": "9689:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -3679,7 +3679,7 @@
                           "memberName": "value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "9687:9:1",
+                          "src": "9689:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3697,7 +3697,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "9700:1:1",
+                          "src": "9702:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -3705,7 +3705,7 @@
                           },
                           "value": "0"
                         },
-                        "src": "9687:14:1",
+                        "src": "9689:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3721,7 +3721,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "9703:29:1",
+                        "src": "9705:29:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_4d7f9193f0bb10643602d625be1beb4a72809636d827ae5b373d765a9d8872d6",
@@ -3749,7 +3749,7 @@
                         1300
                       ],
                       "referencedDeclaration": 1300,
-                      "src": "9679:7:1",
+                      "src": "9681:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -3763,7 +3763,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9679:54:1",
+                    "src": "9681:54:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -3771,7 +3771,7 @@
                   },
                   "id": 944,
                   "nodeType": "ExpressionStatement",
-                  "src": "9679:54:1"
+                  "src": "9681:54:1"
                 },
                 {
                   "expression": {
@@ -3792,7 +3792,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 685,
-                          "src": "9904:8:1",
+                          "src": "9906:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                             "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -3806,7 +3806,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 934,
-                          "src": "9913:7:1",
+                          "src": "9915:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3817,7 +3817,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "9904:17:1",
+                        "src": "9906:17:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Airline_$681_storage",
                           "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -3831,7 +3831,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 676,
-                      "src": "9904:25:1",
+                      "src": "9906:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -3851,7 +3851,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1296,
-                            "src": "9962:3:1",
+                            "src": "9964:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -3865,7 +3865,7 @@
                           "memberName": "value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "9962:9:1",
+                          "src": "9964:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3890,7 +3890,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 685,
-                              "src": "9932:8:1",
+                              "src": "9934:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                 "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -3904,7 +3904,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 934,
-                              "src": "9941:7:1",
+                              "src": "9943:7:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -3915,7 +3915,7 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "9932:17:1",
+                            "src": "9934:17:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_struct$_Airline_$681_storage",
                               "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -3929,7 +3929,7 @@
                           "memberName": "balance",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 676,
-                          "src": "9932:25:1",
+                          "src": "9934:25:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -3943,7 +3943,7 @@
                         "memberName": "add",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 1280,
-                        "src": "9932:29:1",
+                        "src": "9934:29:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
@@ -3957,13 +3957,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "9932:40:1",
+                      "src": "9934:40:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9904:68:1",
+                    "src": "9906:68:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3971,7 +3971,7 @@
                   },
                   "id": 958,
                   "nodeType": "ExpressionStatement",
-                  "src": "9904:68:1"
+                  "src": "9906:68:1"
                 },
                 {
                   "condition": {
@@ -3996,7 +3996,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 685,
-                          "src": "10174:8:1",
+                          "src": "10284:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                             "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -4010,7 +4010,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 934,
-                          "src": "10183:7:1",
+                          "src": "10293:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -4021,7 +4021,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "10174:17:1",
+                        "src": "10284:17:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Airline_$681_storage",
                           "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -4035,7 +4035,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 676,
-                      "src": "10174:25:1",
+                      "src": "10284:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -4053,7 +4053,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "10203:2:1",
+                      "src": "10313:2:1",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_10_by_1",
@@ -4061,7 +4061,7 @@
                       },
                       "value": "10"
                     },
-                    "src": "10174:31:1",
+                    "src": "10284:31:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -4070,7 +4070,7 @@
                   "falseBody": {
                     "id": 988,
                     "nodeType": "Block",
-                    "src": "10368:66:1",
+                    "src": "10478:66:1",
                     "statements": [
                       {
                         "expression": {
@@ -4091,7 +4091,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 685,
-                                "src": "10382:8:1",
+                                "src": "10492:8:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                   "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -4105,7 +4105,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 934,
-                                "src": "10391:7:1",
+                                "src": "10501:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -4116,7 +4116,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "IndexAccess",
-                              "src": "10382:17:1",
+                              "src": "10492:17:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_Airline_$681_storage",
                                 "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -4130,7 +4130,7 @@
                             "memberName": "isAllowedToVote",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 680,
-                            "src": "10382:33:1",
+                            "src": "10492:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -4148,7 +4148,7 @@
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "10418:5:1",
+                            "src": "10528:5:1",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -4156,7 +4156,7 @@
                             },
                             "value": "false"
                           },
-                          "src": "10382:41:1",
+                          "src": "10492:41:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -4164,17 +4164,17 @@
                         },
                         "id": 987,
                         "nodeType": "ExpressionStatement",
-                        "src": "10382:41:1"
+                        "src": "10492:41:1"
                       }
                     ]
                   },
                   "id": 989,
                   "nodeType": "IfStatement",
-                  "src": "10170:264:1",
+                  "src": "10280:264:1",
                   "trueBody": {
                     "id": 980,
                     "nodeType": "Block",
-                    "src": "10207:147:1",
+                    "src": "10317:147:1",
                     "statements": [
                       {
                         "expression": {
@@ -4195,7 +4195,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 685,
-                                "src": "10222:8:1",
+                                "src": "10332:8:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                   "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -4209,7 +4209,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 934,
-                                "src": "10231:7:1",
+                                "src": "10341:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -4220,7 +4220,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "IndexAccess",
-                              "src": "10222:17:1",
+                              "src": "10332:17:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_Airline_$681_storage",
                                 "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -4234,7 +4234,7 @@
                             "memberName": "isAllowedToVote",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 680,
-                            "src": "10222:33:1",
+                            "src": "10332:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -4252,7 +4252,7 @@
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "10258:4:1",
+                            "src": "10368:4:1",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -4260,7 +4260,7 @@
                             },
                             "value": "true"
                           },
-                          "src": "10222:40:1",
+                          "src": "10332:40:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -4268,7 +4268,7 @@
                         },
                         "id": 971,
                         "nodeType": "ExpressionStatement",
-                        "src": "10222:40:1"
+                        "src": "10332:40:1"
                       },
                       {
                         "eventCall": {
@@ -4281,7 +4281,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 934,
-                              "src": "10300:7:1",
+                              "src": "10410:7:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -4298,7 +4298,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 685,
-                                  "src": "10309:8:1",
+                                  "src": "10419:8:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                     "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -4312,7 +4312,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 934,
-                                  "src": "10318:7:1",
+                                  "src": "10428:7:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
                                     "typeString": "address"
@@ -4323,7 +4323,7 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
-                                "src": "10309:17:1",
+                                "src": "10419:17:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_Airline_$681_storage",
                                   "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -4337,7 +4337,7 @@
                               "memberName": "isAllowedToVote",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 680,
-                              "src": "10309:33:1",
+                              "src": "10419:33:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bool",
                                 "typeString": "bool"
@@ -4360,7 +4360,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 698,
-                            "src": "10282:17:1",
+                            "src": "10392:17:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_bool_$returns$__$",
                               "typeString": "function (address,bool)"
@@ -4374,7 +4374,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "10282:61:1",
+                          "src": "10392:61:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
@@ -4382,7 +4382,7 @@
                         },
                         "id": 979,
                         "nodeType": "EmitStatement",
-                        "src": "10277:66:1"
+                        "src": "10387:66:1"
                       }
                     ]
                   }
@@ -4435,10 +4435,10 @@
               "id": 936,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "9669:0:1"
+              "src": "9671:0:1"
             },
             "scope": 1021,
-            "src": "9399:1041:1",
+            "src": "9399:1151:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
@@ -4447,7 +4447,7 @@
             "body": {
               "id": 1011,
               "nodeType": "Block",
-              "src": "10814:79:1",
+              "src": "10924:79:1",
               "statements": [
                 {
                   "expression": {
@@ -4463,7 +4463,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 993,
-                            "src": "10858:7:1",
+                            "src": "10968:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -4476,7 +4476,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 995,
-                            "src": "10867:6:1",
+                            "src": "10977:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -4489,7 +4489,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 997,
-                            "src": "10875:9:1",
+                            "src": "10985:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -4518,7 +4518,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1283,
-                            "src": "10841:3:1",
+                            "src": "10951:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
                               "typeString": "abi"
@@ -4532,7 +4532,7 @@
                           "memberName": "encodePacked",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "10841:16:1",
+                          "src": "10951:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                             "typeString": "function () pure returns (bytes memory)"
@@ -4546,7 +4546,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10841:44:1",
+                        "src": "10951:44:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -4565,7 +4565,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 1290,
-                      "src": "10831:9:1",
+                      "src": "10941:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
                         "typeString": "function () pure returns (bytes32)"
@@ -4579,7 +4579,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10831:55:1",
+                    "src": "10941:55:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4588,7 +4588,7 @@
                   "functionReturnParameters": 1001,
                   "id": 1010,
                   "nodeType": "Return",
-                  "src": "10824:62:1"
+                  "src": "10934:62:1"
                 }
               ]
             },
@@ -4610,7 +4610,7 @@
                   "name": "airline",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10522:15:1",
+                  "src": "10632:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4621,7 +4621,7 @@
                     "id": 992,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10522:7:1",
+                    "src": "10632:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4636,7 +4636,7 @@
                   "name": "flight",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10567:20:1",
+                  "src": "10677:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -4647,7 +4647,7 @@
                     "id": 994,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10567:6:1",
+                    "src": "10677:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -4662,7 +4662,7 @@
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10662:17:1",
+                  "src": "10772:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4673,7 +4673,7 @@
                     "id": 996,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10662:7:1",
+                    "src": "10772:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -4683,7 +4683,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "10492:213:1"
+              "src": "10602:213:1"
             },
             "payable": false,
             "returnParameters": {
@@ -4696,7 +4696,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10800:7:1",
+                  "src": "10910:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4707,7 +4707,7 @@
                     "id": 999,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10800:7:1",
+                    "src": "10910:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4717,10 +4717,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "10799:9:1"
+              "src": "10909:9:1"
             },
             "scope": 1021,
-            "src": "10446:447:1",
+            "src": "10556:447:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
@@ -4729,7 +4729,7 @@
             "body": {
               "id": 1019,
               "nodeType": "Block",
-              "src": "11183:36:1",
+              "src": "11293:36:1",
               "statements": [
                 {
                   "expression": {
@@ -4742,7 +4742,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 669,
-                        "src": "11198:13:1",
+                        "src": "11308:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -4761,7 +4761,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 991,
-                      "src": "11193:4:1",
+                      "src": "11303:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -4775,7 +4775,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11193:19:1",
+                    "src": "11303:19:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -4783,7 +4783,7 @@
                   },
                   "id": 1018,
                   "nodeType": "ExpressionStatement",
-                  "src": "11193:19:1"
+                  "src": "11303:19:1"
                 }
               ]
             },
@@ -4799,27 +4799,27 @@
               "id": 1013,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "11100:2:1"
+              "src": "11210:2:1"
             },
             "payable": true,
             "returnParameters": {
               "id": 1014,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "11183:0:1"
+              "src": "11293:0:1"
             },
             "scope": 1021,
-            "src": "11092:127:1",
+            "src": "11202:127:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 1022,
-        "src": "127:11096:1"
+        "src": "127:11206:1"
       }
     ],
-    "src": "0:11224:1"
+    "src": "0:11334:1"
   },
   "legacyAST": {
     "absolutePath": "/C/Users/Mark/source/repos/GitHub/flightsurety/contracts/FlightSuretyData.sol",
@@ -8182,7 +8182,7 @@
             "body": {
               "id": 990,
               "nodeType": "Block",
-              "src": "9669:771:1",
+              "src": "9671:879:1",
               "statements": [
                 {
                   "expression": {
@@ -8208,7 +8208,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1296,
-                            "src": "9687:3:1",
+                            "src": "9689:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -8222,7 +8222,7 @@
                           "memberName": "value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "9687:9:1",
+                          "src": "9689:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8240,7 +8240,7 @@
                           "kind": "number",
                           "lValueRequested": false,
                           "nodeType": "Literal",
-                          "src": "9700:1:1",
+                          "src": "9702:1:1",
                           "subdenomination": null,
                           "typeDescriptions": {
                             "typeIdentifier": "t_rational_0_by_1",
@@ -8248,7 +8248,7 @@
                           },
                           "value": "0"
                         },
-                        "src": "9687:14:1",
+                        "src": "9689:14:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -8264,7 +8264,7 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
-                        "src": "9703:29:1",
+                        "src": "9705:29:1",
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_4d7f9193f0bb10643602d625be1beb4a72809636d827ae5b373d765a9d8872d6",
@@ -8292,7 +8292,7 @@
                         1300
                       ],
                       "referencedDeclaration": 1300,
-                      "src": "9679:7:1",
+                      "src": "9681:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -8306,7 +8306,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "9679:54:1",
+                    "src": "9681:54:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -8314,7 +8314,7 @@
                   },
                   "id": 944,
                   "nodeType": "ExpressionStatement",
-                  "src": "9679:54:1"
+                  "src": "9681:54:1"
                 },
                 {
                   "expression": {
@@ -8335,7 +8335,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 685,
-                          "src": "9904:8:1",
+                          "src": "9906:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                             "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8349,7 +8349,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 934,
-                          "src": "9913:7:1",
+                          "src": "9915:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -8360,7 +8360,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "9904:17:1",
+                        "src": "9906:17:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Airline_$681_storage",
                           "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8374,7 +8374,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 676,
-                      "src": "9904:25:1",
+                      "src": "9906:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8394,7 +8394,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1296,
-                            "src": "9962:3:1",
+                            "src": "9964:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
                               "typeString": "msg"
@@ -8408,7 +8408,7 @@
                           "memberName": "value",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "9962:9:1",
+                          "src": "9964:9:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8433,7 +8433,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 685,
-                              "src": "9932:8:1",
+                              "src": "9934:8:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                 "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8447,7 +8447,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 934,
-                              "src": "9941:7:1",
+                              "src": "9943:7:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -8458,7 +8458,7 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "9932:17:1",
+                            "src": "9934:17:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_struct$_Airline_$681_storage",
                               "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8472,7 +8472,7 @@
                           "memberName": "balance",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": 676,
-                          "src": "9932:25:1",
+                          "src": "9934:25:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -8486,7 +8486,7 @@
                         "memberName": "add",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": 1280,
-                        "src": "9932:29:1",
+                        "src": "9934:29:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
                           "typeString": "function (uint256,uint256) pure returns (uint256)"
@@ -8500,13 +8500,13 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
-                      "src": "9932:40:1",
+                      "src": "9934:40:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "9904:68:1",
+                    "src": "9906:68:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -8514,7 +8514,7 @@
                   },
                   "id": 958,
                   "nodeType": "ExpressionStatement",
-                  "src": "9904:68:1"
+                  "src": "9906:68:1"
                 },
                 {
                   "condition": {
@@ -8539,7 +8539,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 685,
-                          "src": "10174:8:1",
+                          "src": "10284:8:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                             "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8553,7 +8553,7 @@
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
                           "referencedDeclaration": 934,
-                          "src": "10183:7:1",
+                          "src": "10293:7:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -8564,7 +8564,7 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
-                        "src": "10174:17:1",
+                        "src": "10284:17:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_struct$_Airline_$681_storage",
                           "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8578,7 +8578,7 @@
                       "memberName": "balance",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 676,
-                      "src": "10174:25:1",
+                      "src": "10284:25:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -8596,7 +8596,7 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "10203:2:1",
+                      "src": "10313:2:1",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_10_by_1",
@@ -8604,7 +8604,7 @@
                       },
                       "value": "10"
                     },
-                    "src": "10174:31:1",
+                    "src": "10284:31:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -8613,7 +8613,7 @@
                   "falseBody": {
                     "id": 988,
                     "nodeType": "Block",
-                    "src": "10368:66:1",
+                    "src": "10478:66:1",
                     "statements": [
                       {
                         "expression": {
@@ -8634,7 +8634,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 685,
-                                "src": "10382:8:1",
+                                "src": "10492:8:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                   "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8648,7 +8648,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 934,
-                                "src": "10391:7:1",
+                                "src": "10501:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -8659,7 +8659,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "IndexAccess",
-                              "src": "10382:17:1",
+                              "src": "10492:17:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_Airline_$681_storage",
                                 "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8673,7 +8673,7 @@
                             "memberName": "isAllowedToVote",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 680,
-                            "src": "10382:33:1",
+                            "src": "10492:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -8691,7 +8691,7 @@
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "10418:5:1",
+                            "src": "10528:5:1",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -8699,7 +8699,7 @@
                             },
                             "value": "false"
                           },
-                          "src": "10382:41:1",
+                          "src": "10492:41:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -8707,17 +8707,17 @@
                         },
                         "id": 987,
                         "nodeType": "ExpressionStatement",
-                        "src": "10382:41:1"
+                        "src": "10492:41:1"
                       }
                     ]
                   },
                   "id": 989,
                   "nodeType": "IfStatement",
-                  "src": "10170:264:1",
+                  "src": "10280:264:1",
                   "trueBody": {
                     "id": 980,
                     "nodeType": "Block",
-                    "src": "10207:147:1",
+                    "src": "10317:147:1",
                     "statements": [
                       {
                         "expression": {
@@ -8738,7 +8738,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 685,
-                                "src": "10222:8:1",
+                                "src": "10332:8:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                   "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8752,7 +8752,7 @@
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 934,
-                                "src": "10231:7:1",
+                                "src": "10341:7:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_address",
                                   "typeString": "address"
@@ -8763,7 +8763,7 @@
                               "isPure": false,
                               "lValueRequested": false,
                               "nodeType": "IndexAccess",
-                              "src": "10222:17:1",
+                              "src": "10332:17:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_Airline_$681_storage",
                                 "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8777,7 +8777,7 @@
                             "memberName": "isAllowedToVote",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 680,
-                            "src": "10222:33:1",
+                            "src": "10332:33:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -8795,7 +8795,7 @@
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "10258:4:1",
+                            "src": "10368:4:1",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -8803,7 +8803,7 @@
                             },
                             "value": "true"
                           },
-                          "src": "10222:40:1",
+                          "src": "10332:40:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
@@ -8811,7 +8811,7 @@
                         },
                         "id": 971,
                         "nodeType": "ExpressionStatement",
-                        "src": "10222:40:1"
+                        "src": "10332:40:1"
                       },
                       {
                         "eventCall": {
@@ -8824,7 +8824,7 @@
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 934,
-                              "src": "10300:7:1",
+                              "src": "10410:7:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -8841,7 +8841,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 685,
-                                  "src": "10309:8:1",
+                                  "src": "10419:8:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Airline_$681_storage_$",
                                     "typeString": "mapping(address => struct FlightSuretyData.Airline storage ref)"
@@ -8855,7 +8855,7 @@
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
                                   "referencedDeclaration": 934,
-                                  "src": "10318:7:1",
+                                  "src": "10428:7:1",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_address",
                                     "typeString": "address"
@@ -8866,7 +8866,7 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
-                                "src": "10309:17:1",
+                                "src": "10419:17:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_Airline_$681_storage",
                                   "typeString": "struct FlightSuretyData.Airline storage ref"
@@ -8880,7 +8880,7 @@
                               "memberName": "isAllowedToVote",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 680,
-                              "src": "10309:33:1",
+                              "src": "10419:33:1",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bool",
                                 "typeString": "bool"
@@ -8903,7 +8903,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 698,
-                            "src": "10282:17:1",
+                            "src": "10392:17:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_bool_$returns$__$",
                               "typeString": "function (address,bool)"
@@ -8917,7 +8917,7 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "10282:61:1",
+                          "src": "10392:61:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
@@ -8925,7 +8925,7 @@
                         },
                         "id": 979,
                         "nodeType": "EmitStatement",
-                        "src": "10277:66:1"
+                        "src": "10387:66:1"
                       }
                     ]
                   }
@@ -8978,10 +8978,10 @@
               "id": 936,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "9669:0:1"
+              "src": "9671:0:1"
             },
             "scope": 1021,
-            "src": "9399:1041:1",
+            "src": "9399:1151:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
@@ -8990,7 +8990,7 @@
             "body": {
               "id": 1011,
               "nodeType": "Block",
-              "src": "10814:79:1",
+              "src": "10924:79:1",
               "statements": [
                 {
                   "expression": {
@@ -9006,7 +9006,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 993,
-                            "src": "10858:7:1",
+                            "src": "10968:7:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -9019,7 +9019,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 995,
-                            "src": "10867:6:1",
+                            "src": "10977:6:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_string_memory_ptr",
                               "typeString": "string memory"
@@ -9032,7 +9032,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 997,
-                            "src": "10875:9:1",
+                            "src": "10985:9:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -9061,7 +9061,7 @@
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 1283,
-                            "src": "10841:3:1",
+                            "src": "10951:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_abi",
                               "typeString": "abi"
@@ -9075,7 +9075,7 @@
                           "memberName": "encodePacked",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "10841:16:1",
+                          "src": "10951:16:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
                             "typeString": "function () pure returns (bytes memory)"
@@ -9089,7 +9089,7 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
-                        "src": "10841:44:1",
+                        "src": "10951:44:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
                           "typeString": "bytes memory"
@@ -9108,7 +9108,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 1290,
-                      "src": "10831:9:1",
+                      "src": "10941:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_sha3_pure$__$returns$_t_bytes32_$",
                         "typeString": "function () pure returns (bytes32)"
@@ -9122,7 +9122,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "10831:55:1",
+                    "src": "10941:55:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -9131,7 +9131,7 @@
                   "functionReturnParameters": 1001,
                   "id": 1010,
                   "nodeType": "Return",
-                  "src": "10824:62:1"
+                  "src": "10934:62:1"
                 }
               ]
             },
@@ -9153,7 +9153,7 @@
                   "name": "airline",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10522:15:1",
+                  "src": "10632:15:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9164,7 +9164,7 @@
                     "id": 992,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10522:7:1",
+                    "src": "10632:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -9179,7 +9179,7 @@
                   "name": "flight",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10567:20:1",
+                  "src": "10677:20:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -9190,7 +9190,7 @@
                     "id": 994,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10567:6:1",
+                    "src": "10677:6:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -9205,7 +9205,7 @@
                   "name": "timestamp",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10662:17:1",
+                  "src": "10772:17:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9216,7 +9216,7 @@
                     "id": 996,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10662:7:1",
+                    "src": "10772:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -9226,7 +9226,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "10492:213:1"
+              "src": "10602:213:1"
             },
             "payable": false,
             "returnParameters": {
@@ -9239,7 +9239,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 1012,
-                  "src": "10800:7:1",
+                  "src": "10910:7:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -9250,7 +9250,7 @@
                     "id": 999,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "10800:7:1",
+                    "src": "10910:7:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -9260,10 +9260,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "10799:9:1"
+              "src": "10909:9:1"
             },
             "scope": 1021,
-            "src": "10446:447:1",
+            "src": "10556:447:1",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
@@ -9272,7 +9272,7 @@
             "body": {
               "id": 1019,
               "nodeType": "Block",
-              "src": "11183:36:1",
+              "src": "11293:36:1",
               "statements": [
                 {
                   "expression": {
@@ -9285,7 +9285,7 @@
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
                         "referencedDeclaration": 669,
-                        "src": "11198:13:1",
+                        "src": "11308:13:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -9304,7 +9304,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 991,
-                      "src": "11193:4:1",
+                      "src": "11303:4:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
                         "typeString": "function (address)"
@@ -9318,7 +9318,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "11193:19:1",
+                    "src": "11303:19:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -9326,7 +9326,7 @@
                   },
                   "id": 1018,
                   "nodeType": "ExpressionStatement",
-                  "src": "11193:19:1"
+                  "src": "11303:19:1"
                 }
               ]
             },
@@ -9342,27 +9342,27 @@
               "id": 1013,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "11100:2:1"
+              "src": "11210:2:1"
             },
             "payable": true,
             "returnParameters": {
               "id": 1014,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "11183:0:1"
+              "src": "11293:0:1"
             },
             "scope": 1021,
-            "src": "11092:127:1",
+            "src": "11202:127:1",
             "stateMutability": "payable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 1022,
-        "src": "127:11096:1"
+        "src": "127:11206:1"
       }
     ],
-    "src": "0:11224:1"
+    "src": "0:11334:1"
   },
   "compiler": {
     "name": "solc",
@@ -9566,8 +9566,20 @@
       "links": {},
       "address": "0x04551329ea0f114947c61dde0bc8e39a75b6638c",
       "transactionHash": "0x74ef57721fe216d78a5782df9b3c140af3e51ac1193ec33bf392b15764dcc614"
+    },
+    "1555540977231": {
+      "events": {},
+      "links": {},
+      "address": "0xf57703af48f744da1620524a773b809b21c46c46",
+      "transactionHash": "0x566bd3e7e8b14b0e2f77e84726f9b45e8dfb35dcea66127cf76e8512d6864f2d"
+    },
+    "1555587623842": {
+      "events": {},
+      "links": {},
+      "address": "0x79051a2fafcc216a55d3897474012145d158f170",
+      "transactionHash": "0x7c94c3a12c93daea54375453c4c389b2ea18d329fe1a6f6853b2825eae82c38a"
     }
   },
   "schemaVersion": "2.0.2",
-  "updatedAt": "2019-04-17T11:21:29.934Z"
+  "updatedAt": "2019-04-18T11:52:09.239Z"
 }

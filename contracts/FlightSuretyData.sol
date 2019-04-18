@@ -272,15 +272,16 @@ contract FlightSuretyData is Ownable {
                             public
                             payable
 
-                            //// requireAirlineIsRegistered(airline)
+                            //// requireAirlineIsRegistered(recipient)
     {
         require(msg.value >= 0, "Insufficient funding value."); // Any positive funding amount is acceptable. However, a separate rule enforces a minimum initial balance.
         
         
         // Add msg.value to balance
         airlines[airline].balance = airlines[airline].balance.add(msg.value); //SafeMath add
-        // airline.transfer(msg.value); //// TODO causes test to fail; not funded
-                
+        // recipient.transfer(msg.value); //// TODO causes test to fail; not funded
+
+        // TODO Check whether recipient is an airline or an insuree      ????? 
         //Check balance. If >= 10E: set isAllowedToVote to true & emit notice. Otherwise, no notice & set to false.
         if (airlines[airline].balance >= 10) {
              airlines[airline].isAllowedToVote = true;
