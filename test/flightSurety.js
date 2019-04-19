@@ -36,6 +36,7 @@ contract('Flight Surety Tests', async (accounts) => {
     config = await Test.Config(accounts);
     await config.flightSuretyData.authorizeCaller(config.flightSuretyApp.address);
     console.log("testConfig.js owner's address: " + config.owner);
+    console.log("config.flightSuretyData.balance: " + config.flightSuretyData.balance);
   });
 
   /****************************************************************************************/
@@ -171,6 +172,7 @@ contract('Flight Surety Tests', async (accounts) => {
     let reverted = false;
     let newAirline = accounts[15];
     await config.flightSuretyData.fund(newAirline, {from: config.firstAirline, "value": 10});
+    console.log("config.flightSuretyData.balance: " + config.flightSuretyData.balance);
 
     // ACT
     try {
